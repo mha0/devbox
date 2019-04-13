@@ -11,4 +11,8 @@
   shell: |
     yay -S --noconfirm ansible-aur
         
-- aur: name=dropbox use=makepkg skip_installed=true skip_pgp_check=true
+- name: Install dropbox
+  aur: name=dropbox skip_installed=true skip_pgp_check=true
+
+- name: Install sublime
+  aur: name=sublime-text-dev skip_installed=true skip_pgp_check=true
