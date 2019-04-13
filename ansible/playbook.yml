@@ -1,0 +1,7 @@
+---
+- hosts: all
+  roles:
+    - name: packages
+#    - name: zsh
+#    - name: general_dotfiles
+#    - name: i3
