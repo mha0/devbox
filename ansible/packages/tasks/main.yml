@@ -7,5 +7,5 @@
 - name: install packages
   become: yes
   pacman:
-    name: htop,conky,curl,wget,firefox,chromium,jdk8-openjdk,micro,flameshot,xclip,zsh
+    name: htop,conky,curl,wget,firefox,chromium,jdk8-openjdk,docker,docker-compose,micro,flameshot,xclip,zsh
     state: present
