@@ -1,13 +1,11 @@
----
 - name: remove packages
   become: yes
   pacman:
-    name: firefox,jdk8-openjdk,flameshot
+    name: palemoon-bin
     state: absent
     
 - name: install packages
   become: yes
   pacman:
-    name: firefox,jdk8-openjdk,flameshot
+    name: htop,conky,curl,wget,firefox,chromium,jdk8-openjdk,micro,flameshot,zsh
     state: present
-    

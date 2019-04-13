@@ -1,0 +1,14 @@
+- name: Clone yay
+  git:  
+    repo: 'https://aur.archlinux.org/yay.git'
+    dest: /tmp/git/yay/
+    
+- name: Install yay
+  shell: |
+    cd /tmp/git/yay/ && makepkg -si --noconfirm
+
+- name: Install ansible-aur
+  shell: |
+    yay -S --noconfirm ansible-aur
+        
+- aur: name=dropbox use=makepkg skip_installed=true skip_pgp_check=true
