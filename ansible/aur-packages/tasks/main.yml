@@ -1,18 +1,10 @@
-- name: Clone yay
-  git:  
-    repo: 'https://aur.archlinux.org/yay.git'
-    dest: /tmp/git/yay/
-    
-- name: Install yay
-  shell: |
-    cd /tmp/git/yay/ && makepkg -si --noconfirm
-
-- name: Install ansible-aur
-  shell: |
-    yay -S --noconfirm ansible-aur
+- name: install yay
+  aur: name=yay skip_installed=true 
         
 - name: Install dropbox
-  aur: name=dropbox skip_installed=true skip_pgp_check=true
+  aur: name=dropbox skip_installed=true #skip_pgp_check=true
 
 - name: Install sublime
-  aur: name=sublime-text-dev skip_installed=true skip_pgp_check=true
+  aur: name=sublime-text-dev skip_installed=true #skip_pgp_check=true
+
+# todo install spotify

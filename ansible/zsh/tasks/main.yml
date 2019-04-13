@@ -1,6 +1,12 @@
+- name: Create .zsh.d
+  file: 
+    path: $HOME/.zsh.d/
+    state: directory
+
 - name: Install Antigen
-  shell: |
-    curl -L https://git.io/antigen > /home/mat/.zsh.d/antigen.zsh
+  get_url: 
+    url: https://git.io/antigen
+    dest: $HOME/.zsh.d/antigen.zsh
 
 - name: Activate ZSH
   become: true
@@ -11,7 +17,7 @@
 - name: Copy dotfiles for zsh
   copy:
     src: "{{item}}"
-    dest: /home/mat/
+    dest: $HOME
   with_items:
     - .bash_profile
     - .zshrc

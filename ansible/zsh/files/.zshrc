@@ -1,37 +1,41 @@
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
-zstyle ':completion:*' completer _complete _ignored _approximate
-zstyle ':completion:*' max-errors 1
-zstyle ':completion:*' menu select=1
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl true
-zstyle :compinstall filename '/home/alex/.zshrc'
-autoload -Uz compinit
-compinit
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-unsetopt autocd
-bindkey -e
-source ~/.zsh.d/powerlevel9k.zsh
-source ~/.zsh.d/antigen.zsh
+# antigen
+source $HOME/.zsh.d/antigen.zsh
+
 antigen use oh-my-zsh
+
 antigen bundle git
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle ala/auto-ls
-antigen bundle sindresorhus/pretty-time-zsh
-antigen bundle skx/sysadmin-util
-antigen bundle jsontools
-antigen bundle common-aliases
 antigen bundle gitignore
-antigen bundle sparsick/ansible-zsh
-antigen bundle Tarrasch/zsh-bd
+antigen bundle docker
+antigen bundle docker-compose
+antigen bundle mvn
+antigen bundle spring
+antigen bundle pip
+antigen bundle redis-cli
+antigen bundle zsh_reload
 antigen bundle peterhurford/up.zsh
-antigen bundle soimort/translate-shell
+antigen bundle sparsick/ansible-zsh
 antigen bundle zsh-users/zsh-completions
-antigen bundle felixr/docker-zsh-completion
-antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen theme af-magic
+
 antigen apply
-fpath=(~/.zsh.d $fpath)
-PATH=$PATH:$HOME/.local/bin:$HOME/bin:/opt/bins
-export PATH
-source ~/.zsh.d/work.bashrc
+
+# various
+if [ -f ~/.custom_bashrc ]; then
+    . ~/.custom_bashrc
+fi
+
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+# docker
+alias dcid='docker ps -q | sed -n 1p'
+alias dcbash='docker exec -ti $(dcid) bash'
+alias dclogs='docker logs $(dcid)'
+alias dckill='dcid | xargs docker stop | xargs docker rm'
+
+# clipboard
+alias xc="xclip -selection c"
+alias xv="xclip -selection c -o"
