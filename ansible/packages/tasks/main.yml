@@ -1,5 +1,5 @@
 - name: install packages
   become: yes
   dnf:
-    name: htop,conky,curl,wget,firefox,chromium,jdk8-openjdk,docker,docker-compose,micro,flameshot,xclip,rxvt-unicode,zsh
+    name: htop,conky,curl,wget,firefox,chromium,jdk8-openjdk,docker,docker-compose,micro,flameshot,xclip,powerline,powerline-fonts,fontawesome-fonts,rxvt-unicode,zsh
     state: present

@@ -1,5 +1,6 @@
-# antigen
 source $HOME/.zsh.d/antigen.zsh
+
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 
 antigen use oh-my-zsh
 
@@ -17,7 +18,7 @@ antigen bundle sparsick/ansible-zsh
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme af-magic
+antigen theme bhilburn/powerlevel9k powerlevel9k
 
 antigen apply
 
