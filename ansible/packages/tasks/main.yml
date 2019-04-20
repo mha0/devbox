@@ -1,11 +1,5 @@
-- name: remove packages
-  become: yes
-  pacman:
-    name: palemoon-bin
-    state: absent
-    
 - name: install packages
   become: yes
-  pacman:
-    name: htop,conky,curl,wget,firefox,chromium,jdk8-openjdk,docker,docker-compose,micro,flameshot,xclip,zsh
+  dnf:
+    name: htop,conky,curl,wget,firefox,chromium,jdk8-openjdk,docker,docker-compose,micro,flameshot,xclip,rxvt-unicode,zsh
     state: present

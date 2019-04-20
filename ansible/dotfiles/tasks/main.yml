@@ -1,0 +1,8 @@
+- name: Copy dotfiles
+  copy:
+    src: "{{item}}"
+    dest: $HOME
+  with_items:
+    - .Xresources
+    - .urxvt
+

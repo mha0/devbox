@@ -1,3 +1,9 @@
+- name: install packages
+  become: yes
+  dnf:
+    name: libselinux-python
+    state: present
+
 - name: Create .zsh.d
   file: 
     path: $HOME/.zsh.d/
@@ -21,4 +27,5 @@
   with_items:
     - .bash_profile
     - .zshrc
-    - .zsh.d
+
+
