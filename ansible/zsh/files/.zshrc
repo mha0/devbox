@@ -16,7 +16,7 @@ antigen bundle sparsick/ansible-zsh
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme avit
+antigen theme af-magic
 
 antigen apply
 
