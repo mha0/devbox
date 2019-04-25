@@ -1,0 +1,32 @@
+- name: Copy autostart scripts
+  copy:
+    src: "{{item}}"
+    dest: $HOME
+  with_items:
+    - .config
+  
+- name: Set file permissions 
+  file:
+    path: /home/mat/.config/autostart/merge-xresources.sh
+    mode: a+rwx
+
+- name: Copy autostart scripts
+  become: true
+  copy:
+    src: "{{item}}"
+    dest: /etc/systemd/system/
+  with_items:
+    - merge-xresources.service
+
+- name: Set file permissions 
+  become: true
+  file:
+    path: /etc/systemd/system/merge-xresources.service
+    mode: a+x
+
+- name: Enable service merge-xresources.service
+  become: true
+  systemd:
+    name: merge-xresources
+    enabled: yes
+    state: started

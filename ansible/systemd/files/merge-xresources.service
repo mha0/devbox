@@ -1,0 +1,10 @@
+[Unit]
+Description=Merge .Xresources
+
+[Service]
+Type=oneshot
+User=mat
+ExecStart=/home/mat/.config/autostart/merge-xresources.sh
+
+[Install]
+WantedBy=multi-user.target
