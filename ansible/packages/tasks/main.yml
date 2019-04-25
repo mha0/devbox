@@ -3,3 +3,9 @@
   dnf:
     name: htop,conky,curl,wget,firefox,chromium,jdk8-openjdk,docker,docker-compose,micro,flameshot,xclip,fontawesome-fonts,rxvt-unicode-256color,zsh
     state: present
+
+- name: install rpmfusion packages
+  become: yes
+  dnf:
+    name: lpf-spotify-client,dropbox,sublime-text
+    state: present

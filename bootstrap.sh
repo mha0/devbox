@@ -1,3 +1,3 @@
-#sudo dnf upgrade
-#sudo dnf install ansible
-ansible-playbook -i ansible/localhost.yml --connection=local ansible/playbook.yml --ask-become-pass
+sudo dnf upgrade
+sudo dnf install ansible
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
