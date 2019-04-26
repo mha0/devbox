@@ -1,0 +1,17 @@
+- name: install flatpak Slack
+  become: yes
+  flatpak:
+    name:  com.slack.Slack
+    state: present
+
+- name: install flatpak Sublime
+  become: yes
+  flatpak:
+    name:  com.sublimetext.three
+    state: present
+
+- name: install flatpak Spotify
+  become: yes
+  flatpak:
+    name:  com.spotify.Client
+    state: present
