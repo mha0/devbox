@@ -1,0 +1,14 @@
+- name: install packages
+  become: yes
+  dnf:
+    name: i3,i3status,py3status,i3lock
+    state: present
+
+- name: Copy dotfiles
+  copy:
+    src: "{{item}}"
+    dest: $HOME
+  with_items:
+    - .Xresources
+    - .urxvt
+
