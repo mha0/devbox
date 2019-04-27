@@ -1,7 +1,7 @@
 - name: install packages
   become: yes
   dnf:
-    name: i3,i3status,py3status,i3lock
+    name: i3,i3status,i3lock,py3status
     state: present
 
 - name: Copy dotfiles
