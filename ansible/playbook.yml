@@ -3,5 +3,5 @@
 #    - name: packages
 #    - name: flatpak
 #    - name: zsh
-     - name: dotfiles
+#    - name: dotfiles
      - name: i3

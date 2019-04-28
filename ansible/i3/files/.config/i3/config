@@ -202,7 +202,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	    font pango:DejaVu Sans Mono, FontAwesome 12
-        status_command python3.7 /usr/bin/py3status -c ~/.config/i3status/config
+        status_command python3 /usr/bin/py3status -c ~/.config/i3status/config
       	colors {
 #           class               border  background text
 	        focused_workspace   #666600 #666600    #FFFFFF
@@ -245,7 +245,7 @@ exec firefox
 exec spotify
 
 # various
-xrandr --output Virtual1 --mode 1400x1050
+exec xrandr --output Virtual1 --mode 1400x1050
 focus_follows_mouse no
 
 for_window [class="URxvt"] move to workspace $ws10
