@@ -30,13 +30,15 @@ font pango:monospace 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec urxvt256c
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show drun -show-icons
+bindsym $mod+Shift+d exec rofi -show ssh 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -238,7 +240,7 @@ bindsym $mod+x scratchpad show
 
 # start on login
 exec i3-msg workspace "0:terminal "
-exec urxvt
+exec urxvt256c
 exec i3-msg workspace "2:code2 "
 exec idea
 exec firefox
@@ -248,7 +250,7 @@ exec spotify
 exec xrandr --output Virtual1 --mode 1400x1050
 focus_follows_mouse no
 
-for_window [class="URxvt"] move to workspace $ws10
+for_window [class="urxvt256c"] move to workspace $ws10
 for_window [class="jetbrains-idea"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws9
 
