@@ -1,3 +1,9 @@
+- name: Remove packages
+  become: yes
+  dnf:
+    name: cheese,evolution,simple-scan,gnome-weather
+    state: absent
+
 - name: install packages
   become: yes
   dnf:
