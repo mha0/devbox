@@ -1,7 +1,7 @@
 - hosts: all
   roles:
 #    - name: packages
-#    - name: flatpak
+     - name: flatpak
 #    - name: zsh
 #    - name: dotfiles
-     - name: i3
+#    - name: i3

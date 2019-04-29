@@ -15,3 +15,9 @@
   flatpak:
     name:  com.spotify.Client
     state: present
+
+- name: install flatpak Peek
+  become: yes
+  flatpak:
+    name:  com.uploadedlobster.peek
+    state: present
