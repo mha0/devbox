@@ -1,11 +1,11 @@
+- name: Remove packages
+  become: yes
+  dnf:
+    name: cheese,evolution,simple-scan,gnome-weather
+    state: absent
+
 - name: install packages
   become: yes
   dnf:
-    name: htop,conky,curl,wget,firefox,chromium,jdk8-openjdk,docker,docker-compose,micro,flameshot,xclip,fontawesome-fonts,rxvt-unicode-256color,zsh
-    state: present
-
-- name: install rpmfusion packages
-  become: yes
-  dnf:
-    name: lpf-spotify-client,dropbox,sublime-text
+    name: htop,conky,curl,wget,firefox,chromium,java-1.8.0-openjdk,docker,docker-compose,micro,flameshot,xclip,fontawesome-fonts,rxvt-unicode-256color,zsh,gimp
     state: present

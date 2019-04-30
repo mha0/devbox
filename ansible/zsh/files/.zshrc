@@ -16,7 +16,7 @@ antigen bundle sparsick/ansible-zsh
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme af-magic
+antigen theme simple
 
 antigen apply
 
@@ -38,3 +38,6 @@ alias dckill='dcid | xargs docker stop | xargs docker rm'
 # clipboard
 alias xc="xclip -selection c"
 alias xv="xclip -selection c -o"
+
+# flatpak
+alias subl="flatpak run com.sublimetext.three . &"
