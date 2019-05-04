@@ -247,11 +247,10 @@ exec firefox
 exec spotify
 
 # various
-exec xrandr --output Virtual1 --mode 1400x1050
 focus_follows_mouse no
 
 for_window [class="urxvt256c"] move to workspace $ws10
 for_window [class="jetbrains-idea"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws9
 
-
+exec xrandr --output Virtual1 --mode 1400x1050

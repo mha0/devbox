@@ -1,27 +1,44 @@
 - name: install flatpak Slack
-  tags: packages
+  tags: 
+    - packages
+    - flatpak
   become: yes
   flatpak:
     name:  com.slack.Slack
     state: present
 
 - name: install flatpak Sublime
-  tags: packages
+  tags: 
+    - packages
+    - flatpak
   become: yes
   flatpak:
     name:  com.sublimetext.three
     state: present
 
 - name: install flatpak Spotify
-  tags: packages
+  tags: 
+    - packages
+    - flatpak
   become: yes
   flatpak:
     name:  com.spotify.Client
     state: present
 
 - name: install flatpak Peek
-  tags: packages
+  tags: 
+    - packages
+    - flatpak
   become: yes
   flatpak:
     name:  com.uploadedlobster.peek
+    state: present
+
+- name: install flatpak IntelliJ IDEA
+  tags: 
+    - packages
+    - flatpak
+  become: yes
+  flatpak:
+    name:  com.jetbrains.IntelliJ-IDEA-Ultimate
     state: present
