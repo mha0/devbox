@@ -14,3 +14,9 @@
     dest: $HOME
   with_items:
     - .config
+
+- name: Changing permission of docker-status.sh, adding "+x"
+  tags:
+    - i3
+    - config
+  file: dest=/$HOME/.config/i3status/docker-status.sh mode=u+x  

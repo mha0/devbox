@@ -11,3 +11,20 @@
   dnf:
     name: htop,conky,curl,wget,firefox,chromium,java-1.8.0-openjdk,docker,docker-compose,micro,flameshot,xclip,fontawesome-fonts,rxvt-unicode-256color,zsh,gimp
     state: present
+
+- name: configure docker for non-sudo use - create group docker
+  tags: 
+    - packages
+  become: yes
+  group:
+    name: docker
+    state: present
+
+- name: configure docker for non-sudo use - add user user §to group docker
+  tags: 
+    - packages
+  become: yes
+  user: 
+    name: mat
+    groups: docker
+    append: yes
