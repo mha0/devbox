@@ -1,10 +1,12 @@
 - name: Remove packages
+  tags: packages
   become: yes
   dnf:
     name: cheese,evolution,simple-scan,gnome-weather
     state: absent
 
 - name: install packages
+  tags: packages
   become: yes
   dnf:
     name: htop,conky,curl,wget,firefox,chromium,java-1.8.0-openjdk,docker,docker-compose,micro,flameshot,xclip,fontawesome-fonts,rxvt-unicode-256color,zsh,gimp

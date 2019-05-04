@@ -1,10 +1,14 @@
 - name: install packages
+  tags: i3
   become: yes
   dnf:
     name: i3,i3status,i3lock,py3status,rofi
     state: present
 
 - name: Copy dotfiles
+  tags:
+    - i3
+    - config
   copy:
     src: "{{item}}"
     dest: $HOME

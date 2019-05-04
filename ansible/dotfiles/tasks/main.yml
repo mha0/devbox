@@ -1,4 +1,5 @@
 - name: Copy dotfiles
+  tags: config
   copy:
     src: "{{item}}"
     dest: $HOME
