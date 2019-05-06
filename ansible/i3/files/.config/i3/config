@@ -246,6 +246,7 @@ exec idea
 exec firefox
 exec spotify
 exec jetbrains-toolbox
+exec dunst -config ~/.config/dunst/dunstrc &
 
 # various
 focus_follows_mouse no
