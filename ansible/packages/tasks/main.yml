@@ -9,7 +9,14 @@
   tags: packages
   become: yes
   dnf:
-    name: htop,conky,curl,wget,firefox,chromium,java-1.8.0-openjdk,docker,docker-compose,micro,flameshot,xclip,fontawesome-fonts,rxvt-unicode-256color,zsh,gimp,dunst
+    name: htop,conky,curl,wget,firefox,chromium,java-1.8.0-openjdk,micro,flameshot,xclip,fontawesome-fonts,rxvt-unicode-256color,zsh,gimp,dunst
+    state: present
+
+- name: install docker
+  tags: packages
+  become: yes
+  dnf:
+    name: docker,docker-compose
     state: present
 
 - name: configure docker for non-sudo use - create group docker
@@ -28,3 +35,12 @@
     name: mat
     groups: docker
     append: yes
+
+- name: enable docker service
+  tags: 
+    - packages
+  become: yes
+  systemd: 
+    name: docker
+    state: started
+    enabled: yes
