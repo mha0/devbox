@@ -33,12 +33,3 @@
   flatpak:
     name:  com.uploadedlobster.peek
     state: present
-
-- name: install flatpak IntelliJ IDEA
-  tags: 
-    - packages
-    - flatpak
-  become: yes
-  flatpak:
-    name:  com.jetbrains.IntelliJ-IDEA-Ultimate
-    state: present
