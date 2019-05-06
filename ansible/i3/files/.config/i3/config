@@ -244,6 +244,7 @@ exec urxvt256c
 exec i3-msg workspace "2:code2 "
 exec idea
 exec firefox
+exec flatpak run com.sublimetext.three
 exec spotify
 exec jetbrains-toolbox
 exec dunst -config ~/.config/dunst/dunstrc &
