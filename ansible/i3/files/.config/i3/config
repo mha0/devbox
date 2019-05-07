@@ -247,7 +247,8 @@ exec firefox
 exec flatpak run com.sublimetext.three
 exec spotify
 exec jetbrains-toolbox
-exec dunst -config ~/.config/dunst/dunstrc &
+exec dunst -config ~/.config/dunst/dunstrc
+exec flameshot
 
 # various
 focus_follows_mouse no

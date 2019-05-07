@@ -41,3 +41,4 @@ alias xv="xclip -selection c -o"
 
 # flatpak
 alias subl="flatpak run com.sublimetext.three . &"
+alias peek="flatpak run com.uploadedlobster.peek &"
