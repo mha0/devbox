@@ -1,1 +1,5 @@
  xrandr --output Virtual1 --mode 1400x1050
+ 
+ # Fedora grub fix
+ https://www.stephenwagner.com/2018/08/25/fedora-core-28-black-screen-with-cursor-after-install-or-upgrade/
+ 
