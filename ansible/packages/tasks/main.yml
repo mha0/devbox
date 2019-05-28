@@ -1,4 +1,4 @@
-- name: Remove packages
+- name: "remove packages"
   tags: packages
   become: yes
   apt:
@@ -7,7 +7,7 @@
     autoremove: yes
 
 # yakuake?
-- name: install packages
+- name: "install packages"
   tags: packages
   become: yes
   apt: 

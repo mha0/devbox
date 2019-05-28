@@ -1,33 +1,27 @@
 - name: "install micro"
-  tags: 
-    - snaps
+  tags: snaps
   snap:
     name: micro
     classic: yes
 
+- name: "install Sublime"
+  tags: snaps
+  snap:
+    name:  sublime-text
+    classic: yes
+
 - name: "install Slack"
-  tags: 
-    - snaps
+  tags: snaps
   snap:
     name: slack
     classic: yes
 
-# needed?
-#- name: "install Sublime"
-#  tags: 
-#    - snaps
-#  snap:
-#    name:  sublime-text
-#    classic: yes
-
 - name: "install Spotify"
-  tags: 
-    - snaps
+  tags: snaps
   snap:
     name: spotify
 
 - name: "install e-tools"
-  tags: 
-    - snaps
+  tags: snaps
   snap:
     name: e-tools
