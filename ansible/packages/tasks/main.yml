@@ -2,31 +2,14 @@
   tags: packages
   become: yes
   apt:
-    name: |
-      cheese,
-      evolution,
-      simple-scan,
-      gnome-weather
+    name: "openjdk-11-jre,openjdk-11-jre-headless"
     state: absent
+    autoremove: yes
 
 # yakuake?
 - name: install packages
   tags: packages
   become: yes
   apt: 
-    name: |
-      firefox,
-      chromium,
-      keepassxc,
-      htop,
-      conky,
-      curl,
-      wget,
-      xclip,
-      micro,
-      zsh,
-      terminator,
-      rxvt-unicode-256color,
-      java-1.8.0-openjdk,
-      gimp
+    name: "firefox,chromium-browser,keepassxc,htop,conky,curl,wget,xclip,zsh,rxvt-unicode-256color,guake,terminator,gimp,openjdk-8-jdk"
     state: present
