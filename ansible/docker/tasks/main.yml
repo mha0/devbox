@@ -1,30 +1,27 @@
-- name: install docker
-  tags: packages
+- name: "install docker"
+  tags: docker
   become: yes
-  dnf:
+  apt:
     name: docker,docker-compose
     state: present
 
-- name: configure docker for non-sudo use - create group docker
-  tags: 
-    - packages
+- name: "configure docker for non-sudo use - create group docker"
+  tags: docker
   become: yes
   group:
     name: docker
     state: present
 
-- name: configure docker for non-sudo use - add user user to group docker
-  tags: 
-    - packages
+- name: "configure docker for non-sudo use - add user user to group docker"
+  tags: docker
   become: yes
   user: 
     name: mat
     groups: docker
     append: yes
 
-- name: enable docker service
-  tags: 
-    - packages
+- name: "enable docker service"
+  tags: docker
   become: yes
   systemd: 
     name: docker
