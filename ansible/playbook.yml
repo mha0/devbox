@@ -1,7 +1,7 @@
 - hosts: all
   roles:
-     - name: packages
-#     - name: snaps
+#     - name: packages
+     - name: snaps
 #     - name: docker
 #     - name: zsh
 #     - name: dotfiles
