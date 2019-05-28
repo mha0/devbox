@@ -1,46 +1,32 @@
 - name: Remove packages
   tags: packages
   become: yes
-  dnf:
-    name: cheese,evolution,simple-scan,gnome-weather
+  apt:
+    name: |
+      cheese,
+      evolution,
+      simple-scan,
+      gnome-weather
     state: absent
 
+# yakuake?
 - name: install packages
   tags: packages
   become: yes
-  dnf:
-    name: htop,conky,curl,wget,firefox,chromium,java-1.8.0-openjdk,micro,flameshot,xclip,fontawesome-fonts,rxvt-unicode-256color,zsh,gimp,dunst
+  apt: 
+    name: |
+      firefox,
+      chromium,
+      keepassxc,
+      htop,
+      conky,
+      curl,
+      wget,
+      xclip,
+      micro,
+      zsh,
+      terminator,
+      rxvt-unicode-256color,
+      java-1.8.0-openjdk,
+      gimp
     state: present
-
-- name: install docker
-  tags: packages
-  become: yes
-  dnf:
-    name: docker,docker-compose
-    state: present
-
-- name: configure docker for non-sudo use - create group docker
-  tags: 
-    - packages
-  become: yes
-  group:
-    name: docker
-    state: present
-
-- name: configure docker for non-sudo use - add user user to group docker
-  tags: 
-    - packages
-  become: yes
-  user: 
-    name: mat
-    groups: docker
-    append: yes
-
-- name: enable docker service
-  tags: 
-    - packages
-  become: yes
-  systemd: 
-    name: docker
-    state: started
-    enabled: yes

@@ -1,9 +1,10 @@
-- name: install packages
-  tags: shell
-  become: yes
-  dnf:
-    name: libselinux-python
-    state: present
+# needed?
+#- name: install packages
+#  tags: shell
+#  become: yes
+#  dnf:
+#    name: libselinux-python
+#    state: present
 
 - name: Create .zsh.d
   tags: shell

@@ -1,0 +1,6 @@
+- name: install IntelliJ
+  tags: 
+    - ide
+  snap:
+    name:  intellij-idea-ultimate
+    classic: yes
