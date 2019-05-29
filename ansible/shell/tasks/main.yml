@@ -1,31 +1,31 @@
 # needed?
-#- name: install packages
+#- name: "install packages"
 #  tags: shell
 #  become: yes
 #  dnf:
 #    name: libselinux-python
 #    state: present
 
-- name: Create .zsh.d
+- name: "create .zsh.d"
   tags: shell
   file: 
     path: $HOME/.zsh.d/
     state: directory
 
-- name: Install Antigen
+- name: "install antigen"
   tags: shell
   get_url: 
     url: https://git.io/antigen
     dest: $HOME/.zsh.d/antigen.zsh
 
-- name: Activate ZSH
+- name: "set zsh as default shell"
   tags: shell
   become: true
   user:
     name: mat
     shell: /bin/zsh
 
-- name: Copy dotfiles for zsh
+- name: "copy dotfiles for zsh"
   tags: 
     - shell
     - config

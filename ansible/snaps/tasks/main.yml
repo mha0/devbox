@@ -20,8 +20,3 @@
   tags: snaps
   snap:
     name: spotify
-
-- name: "install e-tools"
-  tags: snaps
-  snap:
-    name: e-tools
