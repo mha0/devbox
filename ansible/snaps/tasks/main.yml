@@ -1,17 +1,20 @@
 - name: "install micro"
   tags: snaps
+  become: yes
   snap:
     name: micro
     classic: yes
 
 - name: "install Sublime"
   tags: snaps
+  become: yes
   snap:
     name:  sublime-text
     classic: yes
 
 - name: "install Slack"
   tags: snaps
+  become: yes
   snap:
     name: slack
     classic: yes

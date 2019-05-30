@@ -11,5 +11,5 @@
   tags: packages
   become: yes
   apt: 
-    name: "firefox,chromium-browser,keepassxc,htop,conky,curl,wget,xclip,zsh,rxvt-unicode-256color,guake,terminator,gimp,openjdk-8-jdk"
+    name: "firefox,chromium-browser,keepassxc,htop,conky,curl,wget,tree,xclip,zsh,rxvt-unicode-256color,guake,terminator,gimp,openjdk-8-jdk"
     state: present
