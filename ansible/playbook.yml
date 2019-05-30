@@ -1,8 +1,8 @@
 - hosts: all
   roles:
+#     - name: shell
 #     - name: packages
 #     - name: snaps
-     - name: docker
-#     - name: zsh
+#     - name: docker
 #     - name: dotfiles
 #     - name: ide
