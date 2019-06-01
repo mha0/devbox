@@ -5,4 +5,4 @@
      - name: snaps
      - name: docker
      - name: dotfiles
-#     - name: ide
+     - name: ide

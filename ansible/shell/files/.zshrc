@@ -20,13 +20,11 @@ antigen theme simple
 
 antigen apply
 
-# various
+# path
+export PATH=$PATH:/snap/bin
+
 if [ -f ~/.custom_bashrc ]; then
     . ~/.custom_bashrc
-fi
-
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
 fi
 
 # docker
@@ -38,3 +36,4 @@ alias dckill='dcid | xargs docker stop | xargs docker rm'
 # clipboard
 alias xc="xclip -selection c"
 alias xv="xclip -selection c -o"
+
