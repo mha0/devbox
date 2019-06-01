@@ -4,5 +4,4 @@
     src: "{{item}}"
     dest: $HOME
   with_items:
-    - .urxvt
     - .Xresources
