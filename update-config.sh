@@ -1,1 +1,1 @@
-ansible-playbook -i ansible/localhost.yml --connection=local ansible/playbook.yml --tags=config
+ansible-playbook -i ansible/devbox.yml --connection=local ansible/playbook.yml --tags=config

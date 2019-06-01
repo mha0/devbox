@@ -4,5 +4,4 @@
      - name: packages
      - name: snaps
      - name: docker
-     - name: dotfiles
      - name: ide

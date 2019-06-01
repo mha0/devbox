@@ -1,1 +1,1 @@
-ansible-playbook -i ansible/localhost.yml --connection=local ansible/playbook.yml --ask-become-pass
+ansible-playbook -i ansible/devbox.yml --connection=local ansible/playbook.yml --ask-become-pass
