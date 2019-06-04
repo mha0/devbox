@@ -8,8 +8,10 @@ fi
 sudo apt update
 sudo apt upgrade --yes
 
-# install packages
+# install open-vm-tools-desktop
 sudo apt install open-vm-tools-desktop
+
+# install git
 sudo apt install git
 git config --global user.email "$1"
 
