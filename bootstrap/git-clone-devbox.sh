@@ -1,6 +1,6 @@
 # create local git dir
 sudo mkdir /var/git/
-chown mat:mat /var/git/
+sudo chown mat:mat /var/git/
 
 # create link
 sudo ln -s /var/git/ ~/git
