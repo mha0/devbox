@@ -5,14 +5,14 @@ if [ $# -eq 0 ]
 fi
 
 # system upgrade
-sudo apt update
-sudo apt upgrade --yes
+sudo apt-get update
+sudo apt-get --yes upgrade 
 
 # install open-vm-tools-desktop
-sudo apt install open-vm-tools-desktop
+sudo apt-get --yes install open-vm-tools-desktop
 
 # install git
-sudo apt install git
+sudo apt-get --yes install git
 git config --global user.email "$1"
 
 # generate ssh key
