@@ -6,21 +6,21 @@
     state: absent
     autoremove: yes
 
-- name: "install packages: dev-tools"
+- name: "install packages: dev"
   tags: packages
   become: yes
   apt: 
     name: "openjdk-8-jdk"
     state: present
 
-- name: "install packages: shell-tools"
+- name: "install packages: shell"
   tags: packages
   become: yes
   apt: 
     name: "htop,conky,curl,wget,tree,xclip,zsh,guake,terminator"
     state: present
 
-- name: "install packages: gui tools"
+- name: "install packages: gui"
   tags: packages
   become: yes
   apt: 

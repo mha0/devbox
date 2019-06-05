@@ -1,11 +1,3 @@
-# needed?
-#- name: "install packages"
-#  tags: shell
-#  become: yes
-#  dnf:
-#    name: libselinux-python
-#    state: present
-
 - name: "create .zsh.d"
   tags: shell
   file: 

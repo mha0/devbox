@@ -2,6 +2,6 @@
   roles:
      - name: shell
      - name: packages
-     - name: snaps
      - name: docker
+     - name: snaps
      - name: ide
