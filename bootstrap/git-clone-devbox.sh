@@ -6,6 +6,7 @@ sudo chown mat:mat /var/git/
 ln -s /var/git/ ~/git
 
 # ssh clone devbox
+ssh-keyscan github.com >> ~/.ssh/known_hosts
 git clone git@github.com:mha0/devbox.git ~/git/devbox
 
 # cleanup
