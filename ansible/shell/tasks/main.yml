@@ -33,7 +33,6 @@
     src: "{{item}}"
     dest: $HOME
   with_items:
-    - .bash_profile
     - .zshrc
 
 
