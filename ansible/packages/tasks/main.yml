@@ -6,10 +6,23 @@
     state: absent
     autoremove: yes
 
-# yakuake?
-- name: "install packages"
+- name: "install packages: dev-tools"
   tags: packages
   become: yes
   apt: 
-    name: "firefox,chromium-browser,keepassxc,htop,conky,curl,wget,tree,xclip,zsh,rxvt-unicode-256color,guake,terminator,gimp,openjdk-8-jdk"
+    name: "openjdk-8-jdk"
+    state: present
+
+- name: "install packages: shell-tools"
+  tags: packages
+  become: yes
+  apt: 
+    name: "htop,conky,curl,wget,tree,xclip,zsh,guake,terminator"
+    state: present
+
+- name: "install packages: gui tools"
+  tags: packages
+  become: yes
+  apt: 
+    name: "firefox,chromium-browser,keepassxc,baobab,flameshot,gimp"
     state: present
