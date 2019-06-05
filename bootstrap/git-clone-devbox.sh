@@ -9,4 +9,4 @@ ln -s /var/git/ ~/git
 git clone git@github.com:mha0/devbox.git ~/git/devbox
 
 # cleanup
-rm -rf ~/devbox
+rm -rf ~/devbox-master
