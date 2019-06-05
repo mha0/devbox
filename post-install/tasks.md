@@ -2,7 +2,7 @@
 Using GUI > Preferences: set background color
 
 # Conigure Guake
-Using GUI > Appereance
+Using GUI > Appearance
 - Set background color
 - Disable transparency
 
