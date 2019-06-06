@@ -1,0 +1,12 @@
+- hosts: localhost
+  vars:
+    gnome_extension_ids:
+      - 8    # Places Status Indicator
+      - 9    # SystemMonitor
+      - 19   # User Themes
+      - 912  # Command Output
+      - 1403 # Remove Alt+Tab Delay
+  roles:
+      - jaredhocutt.gnome_extensions
+  environment:
+    ANSIBLE_ROLES_PATH: ~/.ansible/roles
