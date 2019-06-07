@@ -1,10 +1,11 @@
 - hosts: localhost
   vars:
     gnome_extension_ids:
-      - 8    # Places Status Indicator
-      - 19   # User Themes
-      - 912  # Command Output
-      - 1403 # Remove Alt+Tab Delay
+      - "8"    # Places Status Indicator
+      - "15"   # AlternateTab
+      - "19"   # User Themes
+      - "912"  # Command Output
+      - "1403" # Remove Alt+Tab Delay
   roles:
       - jaredhocutt.gnome_extensions
   environment:
