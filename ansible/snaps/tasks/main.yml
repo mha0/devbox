@@ -5,6 +5,12 @@
     name: micro
     classic: yes
 
+- name: "install keepassxc"
+  tags: snaps
+  become: yes
+  snap:
+    name: keepassxc
+
 - name: "install sublime"
   tags: snaps
   become: yes
