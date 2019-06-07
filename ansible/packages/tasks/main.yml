@@ -24,5 +24,5 @@
   tags: packages
   become: yes
   apt: 
-    name: "firefox,chromium-browser,keepassxc,baobab,flameshot,gimp"
+    name: "firefox,chromium-browser,keepassxc,baobab,flameshot,gimp,gnome-tweak-tool,chrome-gnome-shell"
     state: present

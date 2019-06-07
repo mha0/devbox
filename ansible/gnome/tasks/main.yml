@@ -1,6 +1,0 @@
-- name: "install packages: gnome"
-  tags: gnome
-  become: yes
-  apt: 
-    name: "gnome-tweak-tool,chrome-gnome-shell"
-    state: present

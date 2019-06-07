@@ -2,7 +2,6 @@
   roles:
      - name: shell
      - name: packages
-#     - name: docker
+     - name: docker
      - name: snaps
-#     - name: ide
-     - name: gnome
+     - name: ide
