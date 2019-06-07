@@ -3,9 +3,10 @@
     gnome_extension_ids:
       - "8"    # Places Status Indicator
       - "15"   # AlternateTab
+      - "16"   # Auto Move Windows
       - "19"   # User Themes
-      - "912"  # Command Output
-      - "1403" # Remove Alt+Tab Delay
+      - "1128" # Remove Alt+Tab Delay
+      - "1403" # Hide Activities Button
   roles:
       - jaredhocutt.gnome_extensions
   environment:
