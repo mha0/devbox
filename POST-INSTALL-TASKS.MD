@@ -12,11 +12,3 @@ Using GUI > Appearance
 
 # Configure DE
 
-## Look And Feel
-TODO
-
-## Panel
-TODO
-
-## App Switcher
-TODO
