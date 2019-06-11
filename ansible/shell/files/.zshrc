@@ -27,6 +27,9 @@ if [ -f ~/.custom_bashrc ]; then
     . ~/.custom_bashrc
 fi
 
+# ubuntu
+alias update-packages='sudo apt update && sudo apt upgrade -y'
+
 # docker
 alias dcid='docker ps -q | sed -n 1p'
 alias dcbash='docker exec -ti $(dcid) bash'
