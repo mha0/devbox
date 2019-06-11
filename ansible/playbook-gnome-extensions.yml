@@ -6,6 +6,7 @@
       - "16"   # Auto Move Windows
       - "19"   # User Themes
       - "1128" # Remove Alt+Tab Delay
+      - "1267" # No Title Bar
       - "1403" # Hide Activities Button
   roles:
       - jaredhocutt.gnome_extensions
