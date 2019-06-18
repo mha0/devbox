@@ -1,14 +1,17 @@
-# system upgrade
+# enable atom repo
+sudo add-apt-repository --yes ppa:webupd8team/atom
+
+# upgrade packages
 sudo apt-get update
 sudo apt-get --yes upgrade 
 
-# install tools preferred for removing packages by ansible, resolve warnings
+# install tools for removing packages used ansible, resolve warnings
 sudo apt-get --yes install aptitude 
 sudo apt-get --yes install python-apt 
 
 # install ansible
 sudo apt-get --yes install software-properties-common 
-sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt-add-repository --yes ppa:ansible/ansible
 sudo apt-get --yes install ansible
 
 # install ansible roles
