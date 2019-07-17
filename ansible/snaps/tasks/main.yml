@@ -25,6 +25,12 @@
     name: slack
     classic: yes
 
+- name: "install postman"
+  tags: snaps
+  become: yes
+  snap:
+    name: postman
+
 - name: "install spotify"
   tags: snaps
   become: yes
