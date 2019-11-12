@@ -10,7 +10,7 @@
   tags: packages
   become: yes
   apt: 
-    name: "openjdk-8-jdk,maven"
+    name: "openjdk-11-jdk,maven"
     state: present
 
 - name: "install packages: shell"

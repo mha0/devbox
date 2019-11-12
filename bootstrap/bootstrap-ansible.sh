@@ -1,6 +1,3 @@
-# enable atom repo
-sudo add-apt-repository --yes ppa:webupd8team/atom
-
 # upgrade packages
 sudo apt-get update
 sudo apt-get --yes upgrade 

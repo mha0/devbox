@@ -8,7 +8,3 @@ Using GUI > Appearance
 
 # Configure IDE
 - Import personal settings.zip
-- Import code style
-
-# Configure DE
-
