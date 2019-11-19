@@ -9,6 +9,8 @@ antigen bundle docker-compose
 antigen bundle mvn
 antigen bundle spring
 antigen bundle pip
+antigen bundle pipenv
+antigen bundle python
 antigen bundle redis-cli
 antigen bundle zsh_reload
 antigen bundle peterhurford/up.zsh
