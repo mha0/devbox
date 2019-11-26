@@ -9,20 +9,20 @@
 - name: "install packages: dev"
   tags: packages
   become: yes
-  apt: 
+  apt:
     name: "openjdk-11-jdk,maven"
     state: present
 
 - name: "install packages: shell"
   tags: packages
   become: yes
-  apt: 
+  apt:
     name: "htop,conky,curl,wget,tree,xclip,zsh,guake,terminator"
     state: present
 
 - name: "install packages: gui"
   tags: packages
   become: yes
-  apt: 
-    name: "firefox,chromium-browser,baobab,shutter,gimp,gnome-tweak-tool,chrome-gnome-shell"
+  apt:
+    name: "firefox,chromium-browser,keepassxc,baobab,shutter,gimp,gnome-tweak-tool,chrome-gnome-shell"
     state: present
