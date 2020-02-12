@@ -20,10 +20,30 @@ Close Window: Super+R
 spotify-next: Super+N -> dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 shutter: Print -> shutter -s
 
+# Configure IDE
+## Import settings
+Import /post-install/ide/settings.zip
+
+## Install Plugins
+Archive browser
+Builder Generator
+FindBugs-IDEA
+Key Promoter X
+Rainbow Brackets
+Shellcheck
+String Manipulation
+UUID Generator
+
+Python (193.5662.61)
+PlantUML integration (2.22.0)
+Lombok (0.28-2019.3)
+Swagger
+
+# Configure atom
+- Install package atom-sync
+- Restore backup
+
 # Configure Guake
 Using GUI > Appearance
 - Set background color
 - Disable transparency
-
-# Configure IDE
-- Import personal settings.zip
