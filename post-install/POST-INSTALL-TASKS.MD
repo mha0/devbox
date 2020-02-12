@@ -9,7 +9,7 @@
 * Switch windows of an app directly: Super+C
 
 ## Sound and Media
-Play (or play/pause): Super+B
+* Play (or play/pause): Super+B
 
 ## System
 * Focus the active notification: Super+M
@@ -18,11 +18,11 @@ Play (or play/pause): Super+B
 
 ## Custom Shortcuts
 * spotify-next
-** Super+N
-** dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+  * Super+N
+  * dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 * shutter
-** Print
-** shutter -s
+  * Print
+  * shutter -s
 
 # Configure IDE
 ## Import settings
