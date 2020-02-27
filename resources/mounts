@@ -1,3 +1,0 @@
-# Mount vmware shared folders in /etc/fstab
-.host:/Dropbox /home/mat/Dropbox fuse.vmhgfs-fuse allow_other,uid=1000,gid=1000,auto_unmount,defaults 0 0
-.host:/transfer /mnt/transfer fuse.vmhgfs-fuse allow_other,uid=1000,gid=1000,auto_unmount,defaults 0 0
