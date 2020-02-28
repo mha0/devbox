@@ -5,7 +5,7 @@
       - "15"   # AlternateTab
       - "16"   # Auto Move Windows
       - "19"   # User Themes
-      - "21"   # Workspace Indicator
+      - "545"  # Hide Top Bar
       - "1128" # Remove Alt+Tab Delay
       - "1267" # No Title Bar
       - "1403" # Hide Activities Button
