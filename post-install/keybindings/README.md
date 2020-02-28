@@ -1,4 +1,5 @@
-# Configure Gnome
+# Bindings
+
 * Navigation
   * Move window one monitor to the left: Super+S
   * Move window one monitor to the right: Super+F
@@ -20,27 +21,3 @@
   * shutter
     * Key: Print
     * Command: shutter -s
-
-# Configure IDE
-## Import settings
-Import `/post-install/ide-settings.zip`
-
-## Install Plugins
-* Key Promoter X
-* Archive browser
-* Builder Generator
-* SonarLint
-* Shellcheck
-* String Manipulation
-* Rainbow Brackets
-* Ideolog
-* Lombok
-
-# Configure atom
-* Install package atom-sync
-* Restore backup
-
-# Configure Guake
-Using GUI > Appearance
-* Set background color
-* Disable transparency
