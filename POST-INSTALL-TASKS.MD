@@ -1,5 +1,14 @@
 # Configure Gnome
+
+## Import Keybindings
 Use `post-install/keybindings/import-keybindings.sh`.
+
+## Configure Startup Applications
+* Guake
+* polybar
+* nextcloud
+* Terminator
+* Firefox
 
 # Configure IDE
 
