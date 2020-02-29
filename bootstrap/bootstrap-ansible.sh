@@ -1,5 +1,5 @@
 # add PPAs
-sudo add-apt-repository ppa:nextcloud-devs/client
+sudo add-apt-repository --yes ppa:nextcloud-devs/client
 
 # upgrade packages
 sudo apt-get update
