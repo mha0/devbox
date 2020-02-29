@@ -24,7 +24,7 @@
   tags: packages
   become: yes
   apt:
-    name: "firefox,chromium-browser,keepassxc,shutter,baobab,gimp,gnome-tweak-tool,chrome-gnome-shell"
+    name: "nextcloud-client,firefox,chromium-browser,keepassxc,shutter,baobab,gimp,gnome-tweak-tool,chrome-gnome-shell"
     state: present
 
 - name: "install packages: various"
