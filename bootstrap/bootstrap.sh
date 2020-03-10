@@ -3,7 +3,10 @@ sudo add-apt-repository --yes ppa:nextcloud-devs/client
 
 # upgrade packages
 sudo apt-get update
-sudo apt-get --yes upgrade
+# sudo apt-get --yes upgrade
+
+# install open-vm-tools-desktop
+sudo apt-get --yes install open-vm-tools-desktop
 
 # install tools for removing packages used ansible, resolve warnings
 sudo apt-get --yes install aptitude
