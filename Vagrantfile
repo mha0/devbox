@@ -1,40 +1,24 @@
-Vagrant.require_version ">= 1.7.0"
-
-Vagrant.configure(2) do |config|
-  config.vm.box = "ubuntu/bionic64"    # Display the VirtualBox GUI when booting the machine
-
-  # config.vm.box_url = "ubuntu/bionic64"
-  # config.vm.box_download_insecure = true
-  # config.vm.box_download_location_trusted = true
-
-  # config.vm.network "forwarded_port", guest: 7002, host: 7002
-  # config.vm.network "forwarded_port", guest: 9443, host: 9443
-
-  config.vm.synced_folder "..", "/vagrant-share"
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/bionic64"
 
   config.vm.provider "virtualbox" do |v|
+    v.gui = true
     v.memory = 8196
     v.cpus = 4
     v.name = "mat-devbox"
-	v.customize ["modifyvm", :id, "--vram", "128"]
-	v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
-	v.customize ["modifyvm", :id, "--accelerate3d", "on"]
-  v.gui = true
+    v.customize ["modifyvm", :id, "--vram", "128"]
+    v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
+    v.customize ["modifyvm", :id, "--accelerate3d", "on"]
   end
 
-  class Password
-    def to_s
-      begin
-        system 'stty -echo'
-        print "Password: "
-        pass = URI.escape(STDIN.gets.chomp)
-      ensure
-        system 'stty echo'
-      end
-      pass
-    end
-  end
+  # In case you need an IP to access the VM from another software :
+  # config.vm.network "private_network", ip: "192.168.56.101"
 
-  config.vm.provision :shell, :privileged => true, :path => "bootstrap/bootstrap.sh"
-  # config.vm.provision :shell, env: {"USERNAME" => "mat", "PASSWORD" => Password.new, "ENV_PROJECT"=>"MeteoSwiss/environments/tamsi"}, :privileged => false, :path => "startAnsible.sh"
+  config.vm.provision "shell", inline: "sudo sed -i 's/^# deb/deb/g' /etc/apt/sources.list"
+  config.vm.provision "shell", inline: "sudo apt-get update && sudo apt-get upgrade -y"
+  config.vm.provision "shell", inline: "sudo loadkeys de_CH-latin1"
+  config.vm.provision "shell", inline: "sudo apt-get install -y gnome-session gdm3"
+  config.vm.provision "shell", inline: "sudo sed -i 's/XKBLAYOUT=\"us\"/XKBLAYOUT=\"de_CH-latin1\"/g' /etc/default/keyboard"
+  config.vm.provision "shell", inline: "sudo apt-get install -y virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11"
+  config.vm.provision "shell", inline: "sudo shutdown -r now"
 end
