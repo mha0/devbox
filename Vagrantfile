@@ -14,6 +14,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: "sudo apt-get update"
   config.vm.provision "shell", inline: "sudo apt-get -y upgrade"
-  config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
+  # config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
   config.vm.provision "shell", inline: "sudo reboot now"
+  # TODO loadkeys
+  # TODO strip packages and clean
 end
