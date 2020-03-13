@@ -15,10 +15,16 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: "sudo apt-get update"
+  config.vm.provision "shell", inline: "sudo apt-get -y remove --purge libreoffice*"
+  config.vm.provision "shell", inline: "sudo apt-get -y remove --purge thunderbird*"
+  config.vm.provision "shell", inline: "sudo apt-get -y remove --purge shotwell*"
+  config.vm.provision "shell", inline: "sudo apt-get -y remove --purge *rhythmbox*"
+  config.vm.provision "shell", inline: "sudo apt-get -y remove --purge gnome-mines byobu"
   config.vm.provision "shell", inline: "sudo apt-get -y upgrade"
   config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
   config.vm.provision "shell", inline: "sudo apt-get autoclean && sudo apt-get autoremove && sudo apt-get clean"
+  config.vm.provision "shell", inline: "gsettings set org.gnome.desktop.input-surces [('xkb', 'ch')]"
   config.vm.provision "shell", inline: "sudo reboot now"
-  # TODO loadkeys
   # TODO strip packages and clean
 end
+https://www.virtualbox.org/ticket/19336
