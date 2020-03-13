@@ -42,10 +42,9 @@ Vagrant.configure("2") do |config|
   # config.vm.provision "shell", :privileged => true, :path => "scripts/install-ansible.sh"
   # config.vm.provision "shell", :privileged => true, :path => "scripts/start-ansible.sh"
 
-  # Use :ansible or :ansible_local to
-  # select the provisioner of your choice
   config.vm.provision :ansible_local do |ansible|
-    ansible.install = true
+    #ansible.install = true
+    ansible.install = false
     ansible.version = "latest"
     #ansible.inventory_path = "provisioning/inventory.yml"
     ansible.playbook = "provisioning/playbook.yml"

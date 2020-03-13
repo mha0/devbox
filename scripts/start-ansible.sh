@@ -10,4 +10,5 @@ git pull
 git checkout vagrant
 #ansible-galaxy install -r requirements.yml
 #ansible-playbook playbook.yml
+ansible --version
 echo "foxx success!"
