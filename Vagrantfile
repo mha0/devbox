@@ -31,19 +31,20 @@ Vagrant.configure("2") do |config|
   # config.vm.provision "shell", inline: "sudo localectl set-keymap ch"
 
   # install gnome
-  config.vm.provision "shell", inline: "sudo apt-get update"
-  config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
+  # config.vm.provision "shell", inline: "sudo apt-get update"
+  # config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
+  # FIXME
   #config.vm.provision "shell", inline: "gsettings set org.gnome.desktop.input-sources [('xkb', 'ch')]"
 
   # remove unused packages
-  config.vm.provision :ansible_local do |ansible|
-    # ansible.inventory_path = "provisioning/inventory.yml"
-    ansible.playbook = "provisioning/strip-ubuntu-playbook.yml"
-    ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
-  end
+  # config.vm.provision :ansible_local do |ansible|
+  #   # ansible.inventory_path = "provisioning/inventory.yml"
+  #   ansible.playbook = "provisioning/strip-ubuntu-playbook.yml"
+  #   ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
+  # end
 
   # upgrade packages
-  config.vm.provision "shell", inline: "sudo apt-get -y upgrade"
+  # config.vm.provision "shell", inline: "sudo apt-get -y upgrade"
 
   # install all
   config.vm.provision :ansible_local do |ansible|
