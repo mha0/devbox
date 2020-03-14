@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :ansible_local do |ansible|
     ansible.install = true
     ansible.version = "latest"
+    # ansible.inventory_path = "provisioning/inventory.yml"
     ansible.playbook = "provisioning/hello-world-playbook.yml"
     ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
   end
@@ -32,10 +33,11 @@ Vagrant.configure("2") do |config|
   # install gnome
   config.vm.provision "shell", inline: "sudo apt-get update"
   config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
-  config.vm.provision "shell", inline: "gsettings set org.gnome.desktop.input-sources [('xkb', 'ch')]"
+  #config.vm.provision "shell", inline: "gsettings set org.gnome.desktop.input-sources [('xkb', 'ch')]"
 
   # remove unused packages
   config.vm.provision :ansible_local do |ansible|
+    # ansible.inventory_path = "provisioning/inventory.yml"
     ansible.playbook = "provisioning/strip-ubuntu-playbook.yml"
     ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
   end
@@ -45,6 +47,7 @@ Vagrant.configure("2") do |config|
 
   # install all
   config.vm.provision :ansible_local do |ansible|
+    # ansible.inventory_path = "provisioning/inventory.yml"
     ansible.playbook = "provisioning/playbook.yml"
     ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
     ansible.galaxy_role_file = "requirements.yml"
