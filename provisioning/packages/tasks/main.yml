@@ -20,7 +20,7 @@
       - "openjdk-11-jdk"
       - "maven"
     state: present
-    
+
 - name: "install snaps in classic mode"
   tags: snaps
   become: yes
@@ -28,6 +28,7 @@
     name:
       - "atom"
       - "sublime-text"
+      - "intellij-idea-ultimate"
     classic: yes
 
 - name: "install snaps in sandbox mode"
