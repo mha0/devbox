@@ -1,0 +1,6 @@
+---
+- name: Strips a default ubuntu installation of non development packages
+  hosts: default
+  roles:
+     - name: remove-packages
+  

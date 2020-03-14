@@ -1,5 +1,6 @@
-- name: "import keybindings"
-  tags: polybar
-  shell: "./import-keybindings.sh"
-  args:
-    chdir: "${HOME}/git/devbox/ansible/gnome/files/"
+- name: "install packages: various"
+  tags: packages
+  become: yes
+  apt:
+    name: "fonts-font-awesome"
+    state: present

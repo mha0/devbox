@@ -1,0 +1,20 @@
+- name: "remove packages"
+  tags: packages
+  become: yes
+  apt:
+    pkg:
+      - "libreoffice*"
+      - "thunderbird"
+      - "shotwell"
+      - "rhythmbox"
+      - "gnome-mines"
+      - "byobu"
+      - "gnome-mahjongg"
+      - "gnome-calendar"
+      - "gnome-sudoku"
+      - "gnome-todo"
+      - "gnome-video-effects"
+    state: absent
+    purge: yes
+    autoremove: yes
+    autoclean: yes

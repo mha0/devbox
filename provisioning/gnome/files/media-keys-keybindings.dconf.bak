@@ -1,0 +1,15 @@
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+play='<Super>b'
+screensaver=''
+screenshot=''
+
+[custom-keybindings/custom1]
+binding='<Super>n'
+command='dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next'
+name='spotify-next'
+
+[custom-keybindings/custom0]
+binding='Print'
+command='shutter -s'
+name='shutter'

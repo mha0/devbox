@@ -1,10 +1,12 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
 
+  config.vbguest.auto_update = false # TODO update
+
   config.vm.provider "virtualbox" do |v|
     v.gui = true
-    v.memory = 2096
-    v.cpus = 2
+    v.memory = 2096 # TODO update
+    v.cpus = 2 # TODO update
     v.name = "mat-devbox"
     v.customize ["modifyvm", :id, "--vram", "128"]
     v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
@@ -13,42 +15,49 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
   end
 
+  # install ansible
+  # config.vm.provision "shell", inline: "sudo apt-get install -y aptitude"
   # config.vm.provision "shell", inline: "sudo apt-get update"
-
-  # remove unused packages
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge libreoffice*"
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge thunderbird"
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge shotwell"
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge rhythmbox"
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge gnome-mines"
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge byobu"
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge gnome-mahjongg"
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge gnome-calendar"
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge gnome-sudoku"
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge gnome-todo"
-  # config.vm.provision "shell", inline: "sudo apt-get -y remove --purge gnome-video-effects"
-
-  # config.vm.provision "shell", inline: "sudo apt-get -y upgrade"
-
-  # install gnome
-  # config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
-
-  # cleanup
-  # config.vm.provision "shell", inline: "sudo apt-get autoclean && sudo apt-get autoremove && sudo apt-get clean"
+  # config.vm.provision :ansible_local do |ansible|
+  #   ansible.install = true
+  #   ansible.version = "latest"
+  #   ansible.playbook = "provisioning/hello-world-playbook.yml"
+  #   ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
+  # end
 
   # configure keyboard
+  config.vm.provision "shell", inline: "sudo loadkeys ch"
+  # config.vm.provision "shell", inline: "sudo localectl set-keymap ch"
+
+  # install gnome
+  # config.vm.provision "shell", inline: "sudo apt-get update"
+  # config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
   # config.vm.provision "shell", inline: "gsettings set org.gnome.desktop.input-surces [('xkb', 'ch')]"
 
-  # config.vm.provision "shell", :privileged => true, :path => "scripts/install-ansible.sh"
-  # config.vm.provision "shell", :privileged => true, :path => "scripts/start-ansible.sh"
+  # remove unused packages
+  # config.vm.provision :ansible_local do |ansible|
+  #   ansible.playbook = "provisioning/strip-ubuntu-playbook.yml"
+  #   ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
+  # end
 
+  # remove unused packages
+  # config.vm.provision :ansible_local do |ansible|
+  #   ansible.playbook = "provisioning/strip-ubuntu-playbook.yml"
+  #   ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
+  # end
+
+  # remove unused packages
   config.vm.provision :ansible_local do |ansible|
-    #ansible.install = true
-    ansible.install = false
-    ansible.version = "latest"
-    #ansible.inventory_path = "provisioning/inventory.yml"
-    ansible.playbook = "provisioning/playbook.yml"
+    ansible.playbook = "provisioning/install-all-playbook.yml"
+    ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
   end
+
+  # upgrade packages
+  # config.vm.provision "shell", inline: "sudo apt-get -y upgrade"
+
+
+  # cleanup
+  # config.vm.provision "shell", inline: "sudo apt-get autoclean && sudo apt-get autoremove"
 
   #config.vm.provision "shell", inline: "sudo reboot now"
 end

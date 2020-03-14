@@ -1,0 +1,5 @@
+- name: "import keybindings"
+  tags: gnome, config
+  shell: "./import-keybindings.sh"
+  # args:
+  #   chdir: "${HOME}/git/devbox/ansible/gnome/files/"
