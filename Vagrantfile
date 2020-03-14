@@ -18,46 +18,39 @@ Vagrant.configure("2") do |config|
   # install ansible
   # config.vm.provision "shell", inline: "sudo apt-get install -y aptitude"
   # config.vm.provision "shell", inline: "sudo apt-get update"
-  # config.vm.provision :ansible_local do |ansible|
-  #   ansible.install = true
-  #   ansible.version = "latest"
-  #   ansible.playbook = "provisioning/hello-world-playbook.yml"
-  #   ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
-  # end
+  config.vm.provision :ansible_local do |ansible|
+    ansible.install = true
+    ansible.version = "latest"
+    ansible.playbook = "provisioning/hello-world-playbook.yml"
+    ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
+  end
 
   # configure keyboard
   config.vm.provision "shell", inline: "sudo loadkeys ch"
   # config.vm.provision "shell", inline: "sudo localectl set-keymap ch"
 
   # install gnome
-  # config.vm.provision "shell", inline: "sudo apt-get update"
-  # config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
-  # config.vm.provision "shell", inline: "gsettings set org.gnome.desktop.input-surces [('xkb', 'ch')]"
+  config.vm.provision "shell", inline: "sudo apt-get update"
+  config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
+  config.vm.provision "shell", inline: "gsettings set org.gnome.desktop.input-surces [('xkb', 'ch')]"
 
   # remove unused packages
-  # config.vm.provision :ansible_local do |ansible|
-  #   ansible.playbook = "provisioning/strip-ubuntu-playbook.yml"
-  #   ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
-  # end
+  config.vm.provision :ansible_local do |ansible|
+    ansible.playbook = "provisioning/strip-ubuntu-playbook.yml"
+    ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
+  end
 
-  # remove unused packages
-  # config.vm.provision :ansible_local do |ansible|
-  #   ansible.playbook = "provisioning/strip-ubuntu-playbook.yml"
-  #   ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
-  # end
+  # upgrade packages
+  config.vm.provision "shell", inline: "sudo apt-get -y upgrade"
 
-  # remove unused packages
+  # install all
   config.vm.provision :ansible_local do |ansible|
     ansible.playbook = "provisioning/install-all-playbook.yml"
     ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
   end
 
-  # upgrade packages
-  # config.vm.provision "shell", inline: "sudo apt-get -y upgrade"
-
-
   # cleanup
-  # config.vm.provision "shell", inline: "sudo apt-get autoclean && sudo apt-get autoremove"
+  config.vm.provision "shell", inline: "sudo apt-get autoclean && sudo apt-get autoremove"
 
-  #config.vm.provision "shell", inline: "sudo reboot now"
+  config.vm.provision "shell", inline: "sudo reboot now"
 end
