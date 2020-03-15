@@ -28,14 +28,19 @@
     - .zshrc
 
 - name: "install packages for shell"
-  tags: packages
+  tags:
+    - shell
+    - packages
   become: yes
   apt:
     name: "htop,conky,curl,wget,tree,xclip,zsh,guake,terminator"
     state: present
 
 - name: "install micro"
-  tags: snaps
+  tags:
+    - shell
+    - packages
+    - snaps
   become: yes
   snap:
     name: micro

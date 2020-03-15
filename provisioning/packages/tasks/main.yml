@@ -22,7 +22,9 @@
     state: present
 
 - name: "install snaps in classic mode"
-  tags: snaps
+  tags:
+    - packages
+    - snaps
   become: yes
   snap:
     name:
@@ -32,7 +34,9 @@
     classic: yes
 
 - name: "install snaps in sandbox mode"
-  tags: snaps
+  tags:
+    - packages
+    - snaps
   become: yes
   snap:
     name:

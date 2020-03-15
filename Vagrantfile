@@ -15,16 +15,17 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
   end
 
+  # copy files
+  # config.vm.provision "file", source: ".", destination: "$HOME/git/devbox/"
+
   # install ansible
-  # config.vm.provision "shell", inline: "sudo apt-get install -y aptitude"
-  # config.vm.provision "shell", inline: "sudo apt-get update"
-  config.vm.provision :ansible_local do |ansible|
-    ansible.install = true
-    ansible.version = "latest"
-    # ansible.inventory_path = "provisioning/inventory.yml"
-    ansible.playbook = "provisioning/hello-world-playbook.yml"
-    ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
-  end
+  # config.vm.provision :ansible_local do |ansible|
+  #   ansible.install = true
+  #   ansible.version = "latest"
+  #   # ansible.inventory_path = "provisioning/inventory.yml"
+  #   ansible.playbook = "provisioning/hello-world-playbook.yml"
+  #   ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
+  # end
 
   # configure keyboard
   config.vm.provision "shell", inline: "sudo loadkeys ch"
@@ -32,9 +33,7 @@ Vagrant.configure("2") do |config|
 
   # install gnome
   # config.vm.provision "shell", inline: "sudo apt-get update"
-  # config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
-  # FIXME
-  #config.vm.provision "shell", inline: "gsettings set org.gnome.desktop.input-sources [('xkb', 'ch')]"
+  # config.vm.provision "shell# ", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
 
   # remove unused packages
   # config.vm.provision :ansible_local do |ansible|
