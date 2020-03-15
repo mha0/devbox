@@ -1,9 +1,24 @@
 - name: "set input sources"
-  tags: gnome, config
+  tags:
+    - gnome
+    - config
   script: "set-input-sources.sh"
 
+- name: "copy resources for script"
+  tags:
+    - gnome
+    - config
+  copy:
+    src: "{{item}}"
+    dest: $HOME/tmp/
+  with_items:
+    - media-keys-keybindings.dconf.bak
+    - wm-keybindings.dconf.bak
+
 - name: "import keybindings"
-  tags: gnome, config
+  tags:
+    - gnome
+    - config
   script: "import-keybindings.sh"
-  # args:
-  #   chdir: "${HOME}/git/devbox/ansible/gnome/files/"
+  args:
+    chdir: "${HOME}/tmp/"
