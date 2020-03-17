@@ -1,8 +1,8 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/bionic64"
-
   config.vbguest.auto_update = true
 
+  config.vm.box = "ubuntu/bionic64"
+  
   config.vm.provider "virtualbox" do |v|
     v.gui = true
     v.memory = 4096 # TODO update
@@ -53,6 +53,4 @@ Vagrant.configure("2") do |config|
 
   # cleanup
   config.vm.provision "shell", inline: "sudo apt-get autoclean && sudo apt-get autoremove -y"
-
-  # config.vm.provision "shell", inline: "sudo reboot now"
 end
