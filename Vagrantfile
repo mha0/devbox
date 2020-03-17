@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
 
-  config.vbguest.auto_update = true # TODO update
+  config.vbguest.auto_update = true
 
   config.vm.provider "virtualbox" do |v|
     v.gui = true
