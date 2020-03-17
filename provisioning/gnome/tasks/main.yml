@@ -4,21 +4,77 @@
     - config
   script: "set-input-sources.sh"
 
-- name: "copy resources for script"
+# see https://www.reddit.com/r/ansible/comments/5gubpl/shell_module_with_standard_std_input/
+- name: "set input sources"
   tags:
     - gnome
     - config
-  copy:
-    src: "{{item}}"
-    dest: $HOME/tmp/
-  with_items:
-    - media-keys-keybindings.dconf.bak
-    - wm-keybindings.dconf.bak
-
-- name: "import keybindings"
-  tags:
-    - gnome
-    - config
-  script: "import-keybindings.sh"
+  shell: |
+    dconf load /org/gnome/desktop/wm/keybindings/ << EOF
+    {{ lookup("file", "wm-keybindings.dconf.bak") }}
+    EOF
   args:
-    chdir: "${HOME}/tmp/"
+    executable: /bin/bash
+
+- name: "set input sources"
+  tags:
+    - gnome
+    - config
+  shell: |
+    dconf load /org/gnome/settings-daemon/plugins/media-keys/ << EOF
+    {{ lookup("file", "media-keys-keybindings.dconf.bak") }}
+    EOF
+  args:
+    executable: /bin/bash
+
+# - name: Creates directory
+#   file:
+#     path: /tmp/vagrant/gnome/
+#     state: directory
+#
+# - name: "copy resources for script"
+#   tags:
+#     - gnome
+#     - config
+#   copy:
+#     src: "{{item}}"
+#     dest: /tmp/vagrant/gnome/
+#     mode: u=rwx,g=r,o=r
+#   with_items:
+#     - media-keys-keybindings.dconf.bak
+#     - wm-keybindings.dconf.bak
+#     - import-keybindings.sh
+#
+# - name: "import keybindings"
+#   tags:
+#     - gnome
+#     - config
+#   shell: "./import-keybindings.sh >> import-keybindings-log"
+#   args:
+#     chdir: /tmp/vagrant/gnome/
+
+- name: Install gnome extensions
+  import_role:
+    name: myrole
+  vars:
+    rolevar1: value from task
+
+- name: Install gnome extensions
+  hosts: default
+  vars:
+    gnome_extension_ids:
+      - "8"    # Places Status Indicator
+      - "15"   # AlternateTab
+      - "16"   # Auto Move Windows
+      - "19"   # User Themes
+      - "545"  # Hide Top Bar
+      - "1128" # Remove Alt+Tab Delay
+      - "1267" # No Title Bar
+      - "1403" # Hide Activities Button
+  tags:
+    - "gnome"
+    - "gnome-extensions"
+  import_role:
+      name: jaredhocutt.gnome_extensions
+  environment:
+    ANSIBLE_ROLES_PATH: ~/.ansible/roles

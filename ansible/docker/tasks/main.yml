@@ -15,7 +15,7 @@
 - name: "configure docker for non-sudo use - add user user to group docker"
   tags: docker
   become: yes
-  user: 
+  user:
     name: mat
     groups: docker
     append: yes
@@ -23,7 +23,7 @@
 - name: "enable docker service"
   tags: docker
   become: yes
-  systemd: 
+  systemd:
     name: docker
     state: started
     enabled: yes
