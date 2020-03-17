@@ -54,12 +54,6 @@
 #     chdir: /tmp/vagrant/gnome/
 
 - name: Install gnome extensions
-  import_role:
-    name: myrole
-  vars:
-    rolevar1: value from task
-
-- name: Install gnome extensions
   hosts: default
   vars:
     gnome_extension_ids:

@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
     v.gui = true
     v.memory = 4096 # TODO update
     v.cpus = 4 # TODO update
-    v.name = "mat-devbox"
+    v.name = "angular-devbox" # TODO update
     v.customize ["modifyvm", :id, "--vram", "128"]
     v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
     v.customize ["modifyvm", :id, "--accelerate3d", "on"]
