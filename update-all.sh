@@ -1,1 +1,2 @@
-ansible-playbook -i ansible/devbox.yml --connection=local ansible/playbook.yml --ask-become-pass
+#!/bin/bash
+ansible-playbook -i ansible/inventory.yml --connection=local ansible/playbook.yml --ask-become-pass
