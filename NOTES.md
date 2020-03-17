@@ -1,5 +1,6 @@
 # TODO
 cleanup files
 cleanup tasks
-single playbooks
+single playbooks & scripts
+update README
 variable file(?)/stdin for vagrant
