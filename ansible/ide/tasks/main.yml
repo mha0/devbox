@@ -1,6 +1,0 @@
-- name: install intellij-idea-ultimate
-  tags: ide
-  become: true
-  snap:
-    name:  intellij-idea-ultimate
-    classic: yes

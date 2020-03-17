@@ -1,6 +1,0 @@
-- name: "install packages: various"
-  tags: packages
-  become: yes
-  apt:
-    name: "fonts-font-awesome"
-    state: present

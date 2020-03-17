@@ -1,7 +1,10 @@
 # TODO
-line endings -> check shell installation
 cleanup files
 cleanup tasks
+
+line endings -> check shell installation
+check if galaxy roles installation on winhost after run
 single playbooks & scripts
+
 update README
 variable file(?)/stdin for vagrant
