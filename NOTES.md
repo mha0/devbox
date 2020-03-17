@@ -1,4 +1,5 @@
 # TODO
+fix shell not installing
 cleanup files
 cleanup tasks
 single playbooks & scripts
