@@ -16,5 +16,3 @@
       - "gnome-video-effects"
     state: absent
     purge: yes
-    autoremove: yes
-    autoclean: yes

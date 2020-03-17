@@ -1,0 +1,5 @@
+---
+- name: "configure gnome"
+  hosts: default
+  roles:
+     - name: gnome

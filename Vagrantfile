@@ -52,7 +52,7 @@ Vagrant.configure("2") do |config|
   end
 
   # cleanup
-  config.vm.provision "shell", inline: "sudo apt-get autoclean && sudo apt-get autoremove"
+  config.vm.provision "shell", inline: "sudo apt-get autoclean && sudo apt-get autoremove -y"
 
-  config.vm.provision "shell", inline: "sudo reboot now"
+  # config.vm.provision "shell", inline: "sudo reboot now"
 end
