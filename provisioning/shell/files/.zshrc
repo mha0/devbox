@@ -25,10 +25,6 @@ antigen apply
 # path
 export PATH=$PATH:/snap/bin
 
-if [ -f ~/.custom_bashrc ]; then
-    . ~/.custom_bashrc
-fi
-
 # ubuntu
 alias update-packages='sudo apt update && sudo apt upgrade -y'
 
