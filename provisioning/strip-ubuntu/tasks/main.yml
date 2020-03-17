@@ -14,5 +14,9 @@
       - "gnome-sudoku"
       - "gnome-todo"
       - "gnome-video-effects"
+      - "aisleriot"
+      - "simple-scan"
+      - "totem"
+      - "transmission-gtk"
     state: absent
     purge: yes

@@ -2,8 +2,6 @@
 cleanup files
 cleanup tasks
 
-remove solitaire, simplescan, videos, vim, transmission
-
 ensure correct file line endings -> check shell installation
 check if galaxy roles installation on winhost after run
 single playbooks & scripts
