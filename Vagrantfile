@@ -1,13 +1,25 @@
+# Install vagrant-vbguest to install virtualbox guest utils
+unless Vagrant.has_plugin?("vagrant-vbguest")
+    raise  Vagrant::Errors::VagrantError.new, "vbguest plugin is missing. Please install it using 'vagrant plugin install vbguest' and rerun 'vagrant up'"
+end
+
+# Install vagrant-disksize to allow resizing the vagrant box disk
+unless Vagrant.has_plugin?("vagrant-disksize")
+    raise  Vagrant::Errors::VagrantError.new, "vagrant-disksize plugin is missing. Please install it using 'vagrant plugin install vagrant-disksize' and rerun 'vagrant up'"
+end
+
 Vagrant.configure("2") do |config|
   config.vbguest.auto_update = true
 
   config.vm.box = "ubuntu/bionic64"
 
+  config.disksize.size = "50GB"
+
   config.vm.provider "virtualbox" do |v|
     v.gui = true
     v.memory = 4096 # TODO update
     v.cpus = 4 # TODO update
-    v.name = "angular-devbox" # TODO update
+    v.name = "devbox" # TODO update
     v.customize ["modifyvm", :id, "--vram", "128"]
     v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
     v.customize ["modifyvm", :id, "--accelerate3d", "on"]
