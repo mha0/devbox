@@ -21,7 +21,7 @@
   tags:
     - shell
     - config
-  copy:
+  template:
     src: "{{item}}"
     dest: $HOME
   with_items:
