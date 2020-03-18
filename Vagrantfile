@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/bionic64"
 
-  config.disksize.size = "50GB"
+  config.disksize.size = "50GB" # TODO update
 
   config.vm.provider "virtualbox" do |v|
     v.gui = true
@@ -40,7 +40,6 @@ Vagrant.configure("2") do |config|
 
   # configure keyboard
   config.vm.provision "shell", inline: "sudo loadkeys ch"
-  # config.vm.provision "shell", inline: "sudo localectl set-keymap ch"
 
   # install gnome
   config.vm.provision "shell", inline: "sudo apt-get update"
