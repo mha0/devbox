@@ -27,7 +27,7 @@ Use `post-install/keybindings/import-keybindings.sh`.
 * Lombok
 
 # Configure atom
-* Install package atom-sync
+* Install package atom-settings with gist id a3486eaf057d10362648fa89d28ccf67
 * Restore backup
 
 # Configure Guake
