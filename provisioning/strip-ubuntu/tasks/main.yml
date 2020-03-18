@@ -1,5 +1,5 @@
 - name: "remove packages"
-  tags: packages
+  tags: strip
   become: yes
   apt:
     pkg:

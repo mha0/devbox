@@ -1,5 +1,7 @@
 - name: "install packages"
-  tags: packages
+  tags:
+    - packages
+    - apt
   become: yes
   apt:
     pkg:
@@ -13,7 +15,9 @@
     state: present
 
 - name: "install packages for development"
-  tags: packages
+  tags:
+    - packages
+    - apt
   become: yes
   apt:
     pkg:
@@ -24,7 +28,7 @@
 - name: "install snaps in classic mode"
   tags:
     - packages
-    - snaps
+    - snap
   become: yes
   snap:
     name:
@@ -36,7 +40,7 @@
 - name: "install snaps in sandbox mode"
   tags:
     - packages
-    - snaps
+    - snap
   become: yes
   snap:
     name:
