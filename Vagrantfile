@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :ansible_local do |ansible|
     ansible.playbook = "provisioning/playbook.yml"
     ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
-    ansible.galaxy_role_file = "requirements.yml"
+    ansible.galaxy_role_file = "provisioning/requirements.yml"
     ansible.galaxy_roles_path = "$HOME/.ansible/roles"
   end
 

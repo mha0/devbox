@@ -1,5 +1,5 @@
 ---
-- name: Install it all
+- name: "install it all"
   hosts: default
   roles:
      - name: shell
