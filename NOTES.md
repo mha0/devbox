@@ -1,9 +1,7 @@
 # TODO
-create single playbooks
-fix tag scripts
-
 ensure correct file line endings -> check shell installation
 
+update POST-INSTALL-TASKS
 update README
 variable file(?)/stdin for vagrant
 

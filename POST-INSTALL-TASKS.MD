@@ -1,5 +1,8 @@
 # Configure Gnome
 
+# Enable extensions
+TODO
+
 ## Import Keybindings
 Use `post-install/keybindings/import-keybindings.sh`.
 

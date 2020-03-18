@@ -1,0 +1,5 @@
+---
+- name: "install and configure shell"
+  hosts: default
+  roles:
+    - name: shell

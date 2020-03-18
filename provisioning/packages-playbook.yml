@@ -1,0 +1,5 @@
+---
+- name: "install and packages"
+  hosts: default
+  roles:
+    - name: packages

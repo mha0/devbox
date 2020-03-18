@@ -1,2 +1,3 @@
 #!/bin/bash
-ansible-playbook -i ansible/inventory.yml --connection=local ansible/playbook.yml --tags=config
+echo Updating config
+ansible-playbook -i provisioning/inventory provisioning/playbook.yml --tags=config
