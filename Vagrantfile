@@ -13,13 +13,13 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/bionic64"
 
-  config.disksize.size = "50GB" # TODO update
+  config.disksize.size = ENV['DISK_SIZE']
 
   config.vm.provider "virtualbox" do |v|
     v.gui = true
-    v.memory = 4096 # TODO update
-    v.cpus = 4 # TODO update
-    v.name = "devbox" # TODO update
+    v.memory = ENV['MEMORY']
+    v.cpus = ENV['CPU']
+    v.name = ENV['MACHINE_NAME']
     v.customize ["modifyvm", :id, "--vram", "128"]
     v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
     v.customize ["modifyvm", :id, "--accelerate3d", "on"]
