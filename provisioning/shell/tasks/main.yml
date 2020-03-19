@@ -34,7 +34,16 @@
     - apt
   become: yes
   apt:
-    name: "htop,conky,curl,wget,tree,xclip,zsh,guake,terminator"
+    pkg:
+      - "terminator"
+      - "zsh"
+      - "htop"
+      - "conky"
+      - "curl"
+      - "wget"
+      - "tree"
+      - "xclip"
+      - "guake"
     state: present
 
 - name: "install micro"
