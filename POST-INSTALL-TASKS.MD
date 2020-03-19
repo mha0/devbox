@@ -1,15 +1,15 @@
 # Configure Gnome
 
-# Enable extensions
+## Enable extensions
 TODO
+
+## Nextcloud
 
 ## Import Keybindings
 Use `post-install/keybindings/import-keybindings.sh`.
 
 ## Configure Startup Applications
 * Guake
-* polybar
-* nextcloud
 * Terminator
 * Firefox
 

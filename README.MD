@@ -1,9 +1,27 @@
-# Ansible Devbox Setup for Ubuntu 18.04 LTS
+# Ubuntu 18.04 LTS Devbox
 
-0. Run `wget https://github.com/mha0/devbox/archive/master.zip && unzip master.zip && rm master.zip` 
-1. Run `./devbox-master/bootstrap/bootstrap-vm-tools-and-git.sh $ssh-key-name` to update system packages, install open-vm-tools-desktop, install git and generate an ssh keypair.
-2. Register the public ssh key `id_rsa.pub` at `https://github.com/settings/keys`.
-3. Run `./devbox-master/bootstrap/git-clone-devbox.sh` to ssh clone devbox and cleanup files.
-4. Run `cd git/devbox`.
-5. Run `./bootstrap/bootstrap-ansible.sh`.
-5. Run `./update-all.sh`.
+This repo enables automated provisioning of a devbox based on Ubuntu LTS using Vagrant and Ansible.
+
+## Requirements
+
+Install the following before usage:
+
+* [Vagrant](https://www.vagrantup.com/)
+  * The vbguest plugin. Install it by executing `vagrant plugin install vbguest`
+  * The vagrant-disksize plugin. Install it by executing `vagrant plugin install vbguest`
+* [VirtualBox](https://www.virtualbox.org)
+
+## Usage
+
+### Creating the virtual machine
+
+0. Execute `vagrant up` - Note that this will take quite some time
+0. Check `POST-INSTALL-TASKS.MD` for stuff you might have to do manually because it is not automated by vagrant
+
+### Updating an existing virtual machine
+
+There are multiple options to update an existing machine:
+
+* Use `run-playbook.sh $playbook` to execute a single playbook e.g. `run-playbook.sh shell` or `run-playbook.sh all`
+* Use `update-tag.sh $tag` to update a specific tag e.g. `update-tag.sh packages`
+* Use `update-config.sh` to update all configuration

@@ -1,7 +1,6 @@
 # TODO
-update POST-INSTALL-TASKS
-update README
 variable file(?)/stdin for vagrant
+update POST-INSTALL-TASKS
 
 ensure correct file line endings -> check shell installation
 check disk size && type
