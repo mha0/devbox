@@ -40,4 +40,4 @@
       - "1267" # No Title Bar
       - "1403" # Hide Activities Button
   environment:
-    ANSIBLE_ROLES_PATH: ~/.ansible/roles
+    ANSIBLE_ROLES_PATH: /home/vagrant/.ansible/roles/
