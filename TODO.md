@@ -1,3 +1,3 @@
 ensure correct file line endings -> check shell installation
-check if galaxy roles installation on winhost after run
+check disk size && type
 update POST-INSTALL-TASKS

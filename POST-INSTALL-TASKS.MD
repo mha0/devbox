@@ -1,21 +1,19 @@
 # Configure Gnome
 
-## Enable extensions
-TODO
-
-## Nextcloud
-
 ## Import Keybindings
-Use `post-install/keybindings/import-keybindings.sh`.
+Use `~/git/devbox/provisioning/gnome/giles/set-input-sources.sh` to set keybindings
+
+## Enable gnome extensions
+Enable gnome extensions with the app Tweaks.
 
 ## Configure Startup Applications
 * Guake
 * Terminator
 * Firefox
 
-# Configure IDE
+# Configure IntelliJ
+Install the following plugins:
 
-## Install Plugins
 * Key Promoter X
 * Archive browser
 * Builder Generator
@@ -27,10 +25,5 @@ Use `post-install/keybindings/import-keybindings.sh`.
 * Lombok
 
 # Configure atom
-* Install package atom-settings with gist id a3486eaf057d10362648fa89d28ccf67
-* Restore backup
-
-# Configure Guake
-Using GUI > Appearance
-* Set background color
-* Disable transparency
+* Install package atom-settings
+* Restore backup with gist id `a3486eaf057d10362648fa89d28ccf67`
