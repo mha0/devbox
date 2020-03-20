@@ -15,6 +15,7 @@ Install the following before usage:
 
 ### Creating the virtual machine
 
+0. Adjust the parameters in the `.env` file as needed
 0. Execute `vagrant up` - Note that this will take quite some time
 0. Check `POST-INSTALL-TASKS.MD` for stuff you might have to do manually because it is not automated by vagrant
 

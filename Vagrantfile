@@ -1,4 +1,9 @@
 # Install vagrant-vbguest to install virtualbox guest utils
+unless Vagrant.has_plugin?("vagrant-env")
+    raise  Vagrant::Errors::VagrantError.new, "vagrant-env plugin is missing. Please install it using 'vagrant plugin install vagrant-env' and rerun 'vagrant up'"
+end
+
+# Install vagrant-vbguest to install virtualbox guest utils
 unless Vagrant.has_plugin?("vagrant-vbguest")
     raise  Vagrant::Errors::VagrantError.new, "vbguest plugin is missing. Please install it using 'vagrant plugin install vbguest' and rerun 'vagrant up'"
 end
@@ -9,6 +14,7 @@ unless Vagrant.has_plugin?("vagrant-disksize")
 end
 
 Vagrant.configure("2") do |config|
+  config.env.enable
   config.vbguest.auto_update = true
 
   config.vm.box = "ubuntu/bionic64"
@@ -19,7 +25,7 @@ Vagrant.configure("2") do |config|
     v.gui = true
     v.memory = ENV['MEMORY']
     v.cpus = ENV['CPU']
-    v.name = ENV['MACHINE_NAME']
+    v.name = ENV['BOX_NAME']
     v.customize ["modifyvm", :id, "--vram", "128"]
     v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
     v.customize ["modifyvm", :id, "--accelerate3d", "on"]
@@ -59,7 +65,6 @@ Vagrant.configure("2") do |config|
     ansible.playbook = "provisioning/all-playbook.yml"
     ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
     ansible.galaxy_role_file = "provisioning/requirements.yml"
-    ansible.galaxy_roles_path = "$HOME/.ansible/roles"
   end
 
   # cleanup
