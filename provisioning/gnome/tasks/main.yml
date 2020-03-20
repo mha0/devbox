@@ -2,7 +2,7 @@
   tags:
     - gnome
     - config
-  shell: "set-input-sources.sh"
+  script: "set-input-sources.sh"
 
 # see https://www.reddit.com/r/ansible/comments/5gubpl/shell_module_with_standard_std_input/
 - name: "import wm keybindings"
@@ -13,8 +13,6 @@
     dbus-launch dconf load /org/gnome/desktop/wm/keybindings/ <<-EOF
     {{ lookup("file", "wm-keybindings.dconf.bak") }}
     EOF
-  args:
-    executable: /bin/bash
 
 - name: "import media keys keybindings"
   tags:
@@ -24,8 +22,6 @@
     dbus-launch dconf load /org/gnome/settings-daemon/plugins/media-keys/ <<-EOF
     {{ lookup("file", "media-keys-keybindings.dconf.bak") }}
     EOF
-  args:
-    executable: /bin/bash
 
 - name: "install gnome extensions"
   tags:
