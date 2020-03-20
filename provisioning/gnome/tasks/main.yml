@@ -13,6 +13,8 @@
     dbus-launch dconf load /org/gnome/desktop/wm/keybindings/ <<-EOF
     {{ lookup("file", "wm-keybindings.dconf.bak") }}
     EOF
+  args:
+    executable: /bin/bash
 
 - name: "import media keys keybindings"
   tags:
@@ -22,6 +24,8 @@
     dbus-launch dconf load /org/gnome/settings-daemon/plugins/media-keys/ <<-EOF
     {{ lookup("file", "media-keys-keybindings.dconf.bak") }}
     EOF
+  args:
+    executable: /bin/bash
 
 - name: "install gnome extensions"
   tags:
