@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/bionic64"
 
-  config.disksize.size = ENV['DISK_SIZE']
+  config.disksize.size = ENV['MAX_DISK_SIZE']
 
   config.vm.provider "virtualbox" do |v|
     v.gui = true
