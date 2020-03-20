@@ -1,3 +1,2 @@
-ensure correct file line endings -> check shell installation
-check disk size && type
+keymap
 update POST-INSTALL-TASKS
