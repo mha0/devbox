@@ -5,7 +5,7 @@ end
 
 # Install vagrant-vbguest to install virtualbox guest utils
 unless Vagrant.has_plugin?("vagrant-vbguest")
-    raise  Vagrant::Errors::VagrantError.new, "vbguest plugin is missing. Please install it using 'vagrant plugin install vbguest' and rerun 'vagrant up'"
+    raise  Vagrant::Errors::VagrantError.new, "vbguest plugin is missing. Please install it using 'vagrant plugin install vagrant-vbguest' and rerun 'vagrant up'"
 end
 
 # Install vagrant-disksize to allow resizing the vagrant box disk
