@@ -3,6 +3,6 @@
   hosts: default
   roles:
      - name: shell
-     - name: docker
-     - name: packages
+     # - name: docker
+     # - name: packages
      - name: gnome

@@ -42,6 +42,17 @@
   args:
     executable: /bin/bash
 
+- name: "configure startup applications"
+  tags:
+    - gnome
+    - config
+  template:
+    src: "{{item}}"
+    dest: $HOME/.config/autostart
+    newline_sequence: '\n'
+  with_items:
+    - guake.desktop
+
 - name: "install gnome extensions"
   tags:
     - gnome

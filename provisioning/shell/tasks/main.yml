@@ -24,6 +24,7 @@
   template:
     src: "{{item}}"
     dest: $HOME
+    newline_sequence: '\n'
   with_items:
     - .zshrc
 
