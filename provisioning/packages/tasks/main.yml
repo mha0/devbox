@@ -46,3 +46,13 @@
     name:
       - "postman"
       - "spotify"
+
+- name: "configure startup applications"
+  tags:
+    - gnome
+    - config
+  template:
+    src: "{{item}}"
+    dest: $HOME/.config/autostart
+    newline_sequence: '\n'
+  with_fileglob: '*.desktop'
