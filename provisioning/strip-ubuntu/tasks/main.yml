@@ -1,0 +1,22 @@
+- name: "remove packages"
+  tags: strip
+  become: yes
+  apt:
+    pkg:
+      - "libreoffice*"
+      - "thunderbird"
+      - "shotwell"
+      - "rhythmbox"
+      - "gnome-mines"
+      - "byobu"
+      - "gnome-mahjongg"
+      - "gnome-calendar"
+      - "gnome-sudoku"
+      - "gnome-todo"
+      - "gnome-video-effects"
+      - "aisleriot"
+      - "simple-scan"
+      - "totem"
+      - "transmission-gtk"
+    state: absent
+    purge: yes

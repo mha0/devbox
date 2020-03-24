@@ -1,0 +1,62 @@
+- name: "install python3-pip"
+  tags:
+    - packages
+    - apt
+  become: yes
+  apt:
+    pkg:
+      - "python3-pip"
+    state: present
+
+# psutil is a requirement for the dconf module
+- pip:
+    name: psutil
+    executable: pip3
+
+- name: Configure available keyboard layouts in Gnome
+  dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    value: "[('xkb', 'ch')]"
+    state: present
+
+# based on https://forums.fedoraforum.org/showthread.php?319036-Export-import-GNOME-shell-keybindings-(Fedora-28)&p=1811809#post1811809
+# see https://www.reddit.com/r/ansible/comments/5gubpl/shell_module_with_standard_std_input/
+- name: "import wm keybindings"
+  tags:
+    - gnome
+    - config
+  shell: |
+    dbus-launch dconf load /org/gnome/desktop/wm/keybindings/ <<-EOF
+    {{ lookup("file", "wm-keybindings.dconf.bak") }}
+    EOF
+  args:
+    executable: /bin/bash
+- name: "import media keys keybindings"
+  tags:
+    - gnome
+    - config
+  shell: |
+    dbus-launch dconf load /org/gnome/settings-daemon/plugins/media-keys/ <<-EOF
+    {{ lookup("file", "media-keys-keybindings.dconf.bak") }}
+    EOF
+  args:
+    executable: /bin/bash
+
+- name: "install gnome extensions"
+  tags:
+    - gnome
+    - gnome-extensions
+  import_role:
+      name: jaredhocutt.gnome_extensions
+  vars:
+    gnome_extension_ids:
+      - "8"    # Places Status Indicator
+      - "15"   # AlternateTab
+      - "16"   # Auto Move Windows
+      - "19"   # User Themes
+      - "545"  # Hide Top Bar
+      - "1128" # Remove Alt+Tab Delay
+      - "1267" # No Title Bar
+      - "1403" # Hide Activities Button
+  environment:
+    ANSIBLE_ROLES_PATH: /home/vagrant/.ansible/roles/

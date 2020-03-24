@@ -1,18 +1,16 @@
 # Configure Gnome
 
-## Import Keybindings
-Use `post-install/keybindings/import-keybindings.sh`.
+## Enable gnome shell extensions
+Enable gnome shell extensions with the application `Tweaks`
 
 ## Configure Startup Applications
 * Guake
-* polybar
-* nextcloud
 * Terminator
 * Firefox
 
-# Configure IDE
+# Configure IntelliJ IDEA
+Install the following plugins:
 
-## Install Plugins
 * Key Promoter X
 * Archive browser
 * Builder Generator
@@ -24,10 +22,5 @@ Use `post-install/keybindings/import-keybindings.sh`.
 * Lombok
 
 # Configure atom
-* Install package atom-settings
-* Restore backup
-
-# Configure Guake
-Using GUI > Appearance
-* Set background color
-* Disable transparency
+* Install package `atom-settings`
+* Restore backup with gist id `a3486eaf057d10362648fa89d28ccf67`

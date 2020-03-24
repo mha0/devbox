@@ -1,0 +1,48 @@
+- name: "install packages"
+  tags:
+    - packages
+    - apt
+  become: yes
+  apt:
+    pkg:
+      - "chromium-browser"
+      - "keepassxc"
+      - "shutter"
+      - "baobab"
+      - "gimp"
+      - "gnome-tweak-tool"
+      - "chrome-gnome-shell"
+    state: present
+
+- name: "install packages for development"
+  tags:
+    - packages
+    - apt
+  become: yes
+  apt:
+    pkg:
+      - "openjdk-11-jdk"
+      - "maven"
+    state: present
+
+- name: "install snaps in classic mode"
+  tags:
+    - packages
+    - snap
+  become: yes
+  snap:
+    name:
+      - "atom"
+      - "sublime-text"
+      - "intellij-idea-ultimate"
+    classic: yes
+
+- name: "install snaps in sandbox mode"
+  tags:
+    - packages
+    - snap
+  become: yes
+  snap:
+    name:
+      - "postman"
+      - "spotify"

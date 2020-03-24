@@ -1,0 +1,57 @@
+- name: "create .zsh.d"
+  tags: shell
+  file:
+    path: $HOME/.zsh.d/
+    state: directory
+
+- name: "install antigen"
+  tags: shell
+  get_url:
+    url: https://git.io/antigen
+    dest: $HOME/.zsh.d/antigen.zsh
+
+- name: "set zsh as default shell"
+  tags: shell
+  become: true
+  user:
+    name: vagrant
+    shell: /bin/zsh
+
+- name: "copy dotfiles for zsh"
+  tags:
+    - shell
+    - config
+  template:
+    src: "{{item}}"
+    dest: $HOME
+  with_items:
+    - .zshrc
+
+- name: "install packages for shell"
+  tags:
+    - shell
+    - packages
+    - apt
+  become: yes
+  apt:
+    pkg:
+      - "terminator"
+      - "zsh"
+      - "htop"
+      - "conky"
+      - "curl"
+      - "wget"
+      - "tree"
+      - "xclip"
+      - "guake"
+    state: present
+
+- name: "install micro"
+  tags:
+    - shell
+    - packages
+    - snap
+  become: yes
+  snap:
+    name: micro
+    classic: yes
