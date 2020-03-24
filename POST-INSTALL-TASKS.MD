@@ -1,6 +1,4 @@
-# Configure Gnome
-
-## Enable gnome shell extensions
+# Enable gnome shell extensions
 Enable gnome shell extensions with the application `Tweaks`
 
 ## Configure Startup Applications
