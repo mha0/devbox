@@ -4,5 +4,5 @@
   roles:
      - name: shell
      - name: docker
-     # - name: packages
+     - name: packages
      - name: gnome
