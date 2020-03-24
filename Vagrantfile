@@ -68,9 +68,6 @@ Vagrant.configure("2") do |config|
     ansible.galaxy_roles_path = "/home/vagrant/.ansible/roles/"
   end
 
-  # configure gnome keyboard
-  # config.vm.provision "shell", inline: "gsettings set org.gnome.desktop.input-sources sources \"[('xkb', 'ch')]\""
-
   # cleanup
   config.vm.provision "shell", inline: "sudo apt-get autoclean && sudo apt-get autoremove -y"
 end

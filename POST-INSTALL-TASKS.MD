@@ -1,17 +1,14 @@
 # Configure Gnome
 
-## Import Keybindings
-Use `~/git/devbox/provisioning/gnome/giles/set-input-sources.sh` to set keybindings
-
-## Enable gnome extensions
-Enable gnome extensions with the app Tweaks.
+## Enable gnome shell extensions
+Enable gnome shell extensions with the application `Tweaks`
 
 ## Configure Startup Applications
 * Guake
 * Terminator
 * Firefox
 
-# Configure IntelliJ
+# Configure IntelliJ IDEA
 Install the following plugins:
 
 * Key Promoter X
@@ -25,5 +22,5 @@ Install the following plugins:
 * Lombok
 
 # Configure atom
-* Install package atom-settings
+* Install package `atom-settings`
 * Restore backup with gist id `a3486eaf057d10362648fa89d28ccf67`

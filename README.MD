@@ -3,9 +3,15 @@
 This repo enables automated provisioning of a devbox based on Ubuntu LTS using Vagrant and Ansible.
 
 ## Features
-* Strips ubuntu of non development packages and updates existing packages
-* Installs docker, zsh shell with some plugins, and some apt packages and snaps including IntelliJ IDEA Ultimate
-* Installs some gnome shell extensions
+* Based on the official Ubuntu 18.04 LTS
+* Strips ubuntu of non-development packages
+* Updates and upgrades existing packages with `apt`
+* Installs __docker__, __docker-compose__
+* Installs the __ZSH__  shell with some plugins using `antigen`
+* Installs a predefined list of __apt packages__ and __snaps__
+* Sets the __swiss-german keyboard layout__
+* Sets __custom gnome keybindings__
+* Installs a predefined list of __gnome extensions__
 
 ## Requirements
 

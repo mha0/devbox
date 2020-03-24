@@ -1,11 +1,3 @@
-# - name: "set input sources"
-#   tags:
-#     - gnome
-#     - config
-#   shell: "gsettings set org.gnome.desktop.input-sources sources \"[('xkb', 'ch')]\""
-#   args:
-#     executable: /bin/bash
-
 - name: "install python3-pip"
   tags:
     - packages
