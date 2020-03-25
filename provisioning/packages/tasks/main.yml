@@ -5,13 +5,11 @@
   become: yes
   apt:
     pkg:
-      - "chromium-browser"
-      - "keepassxc"
-      - "shutter"
-      - "baobab"
-      - "gimp"
-      - "gnome-tweak-tool"
-      - "chrome-gnome-shell"
+      - chromium-browser
+      - keepassxc
+      - shutter
+      - baobab
+      - gimp
     state: present
 
 - name: "install packages for development"
@@ -21,8 +19,8 @@
   become: yes
   apt:
     pkg:
-      - "openjdk-11-jdk"
-      - "maven"
+      - openjdk-11-jdk
+      - maven
     state: present
 
 - name: "install snaps in classic mode"
@@ -32,9 +30,9 @@
   become: yes
   snap:
     name:
-      - "atom"
-      - "sublime-text"
-      - "intellij-idea-ultimate"
+      - atom
+      - sublime-text
+      - intellij-idea-ultimate
     classic: yes
 
 - name: "install snaps in sandbox mode"
@@ -44,8 +42,8 @@
   become: yes
   snap:
     name:
-      - "postman"
-      - "spotify"
+      - postman
+      - spotify
 
 # see https://stackoverflow.com/a/8290652
 - name: "configure startup applications"
@@ -54,6 +52,7 @@
     - config
   template:
     src: "{{item}}"
-    dest: $HOME/.config/autostart
+    dest: $HOME/.config/autostart/
     newline_sequence: '\n'
-  with_fileglob: '*.desktop'
+  with_items:
+    - guake.desktop

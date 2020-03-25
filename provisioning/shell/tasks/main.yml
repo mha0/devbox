@@ -28,7 +28,7 @@
   with_items:
     - .zshrc
 
-- name: "install packages for shell"
+- name: "install apt packages for shell"
   tags:
     - shell
     - packages
@@ -36,15 +36,15 @@
   become: yes
   apt:
     pkg:
-      - "terminator"
-      - "zsh"
-      - "htop"
-      - "conky"
-      - "curl"
-      - "wget"
-      - "tree"
-      - "xclip"
-      - "guake"
+      - terminator
+      - zsh
+      - htop
+      - conky
+      - curl
+      - wget
+      - tree
+      - xclip
+      - guake
     state: present
 
 - name: "install micro"

@@ -1,3 +1,14 @@
+- name: "install packages for gnome"
+  tags:
+    - packages
+    - apt
+  become: yes
+  apt:
+    pkg:
+      - gnome-tweak-tool
+      - chrome-gnome-shell
+    state: present
+
 - name: "install python3-pip"
   tags:
     - packages
