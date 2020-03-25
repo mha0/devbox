@@ -32,7 +32,6 @@
     name:
       - atom
       - sublime-text
-      - intellij-idea-ultimate
     classic: yes
 
 - name: "install snaps in sandbox mode"
@@ -44,6 +43,16 @@
     name:
       - postman
       - spotify
+
+- name: "install IntelliJ IDEA"
+  tags:
+    - packages
+    - snap
+  become: yes
+  snap:
+    name:
+      - intellij-idea-ultimate
+    classic: yes
 
 # see https://stackoverflow.com/a/8290652
 - name: "configure startup applications"
