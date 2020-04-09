@@ -14,7 +14,7 @@
     name: docker
     state: present
 
-- name: "configure docker for non-sudo use - add user user to group docker"
+- name: "configure docker for non-sudo use - add user to group docker"
   tags: docker
   become: yes
   user:

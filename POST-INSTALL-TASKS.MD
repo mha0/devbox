@@ -15,5 +15,5 @@ Install the following plugins:
 * Lombok
 
 # Configure atom
-* Install package `atom-settings`
+* Install atom package `sync-settings`
 * Restore backup with gist id `a3486eaf057d10362648fa89d28ccf67`
