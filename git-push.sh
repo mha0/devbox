@@ -1,3 +1,3 @@
 git add .
-git commit -m "DEV-0 wip"
+git commit -m "$1"
 git push
