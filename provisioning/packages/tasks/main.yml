@@ -7,6 +7,7 @@
     pkg:
       - chromium-browser
       - keepassxc
+      - guake
       - shutter
       - baobab
       - gimp
@@ -31,7 +32,6 @@
   snap:
     name:
       - atom
-      - sublime-text
     classic: yes
 
 - name: "install snaps in sandbox mode"
@@ -42,7 +42,6 @@
   snap:
     name:
       - postman
-      - spotify
 
 - name: "install IntelliJ IDEA"
   tags:

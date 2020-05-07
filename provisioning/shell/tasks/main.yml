@@ -44,7 +44,6 @@
       - wget
       - tree
       - xclip
-      - guake
     state: present
 
 - name: "install micro"

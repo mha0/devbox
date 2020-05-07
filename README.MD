@@ -20,7 +20,7 @@ This repo enables automated provisioning of a devbox based on Ubuntu LTS using V
 
 ## Usage
 
-### Creating a virtual machine
+### Creating a virtual machine from scratch
 
 1. Adjust the parameters in the `.env` file as needed
 1. Execute `vagrant up` - note that this will take quite some time so have some chocolate in the meantime
@@ -30,6 +30,6 @@ This repo enables automated provisioning of a devbox based on Ubuntu LTS using V
 
 There are multiple options to update an existing machine:
 
-* Use `run-playbook.sh $playbook` to execute a single playbook e.g. `run-playbook.sh shell` or `run-playbook.sh all`
-* Use `update-tag.sh $tag` to update a specific tag e.g. `update-tag.sh packages`
+* Use `run-playbook.sh $playbook` to deploy a certain role such as `run-playbook.sh packages` or `run-playbook.sh shell`
+* Use `update-tag.sh $tag` to update a specific tag e.g. `update-tag.sh packages` will install all packages across all roles
 * Use `update-config.sh` to update all configuration
