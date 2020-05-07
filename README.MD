@@ -14,9 +14,9 @@ This repo enables automated provisioning of a devbox based on Ubuntu LTS using V
 * Installs a predefined list of __gnome extensions__
 
 ## Requirements
+* Install [VirtualBox](https://www.virtualbox.org)
 * Install [Vagrant](https://www.vagrantup.com/)
 * Install required vagrant plugins by executing `vagrant plugin install vagrant-env vagrant-vbguest vagrant-disksize`
-* Install [VirtualBox](https://www.virtualbox.org)
 
 ## Usage
 
