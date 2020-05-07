@@ -18,10 +18,7 @@ This repo enables automated provisioning of a devbox based on Ubuntu LTS using V
 Install the following before usage:
 
 * Install [Vagrant](https://www.vagrantup.com/)
-* Install required vagrant plugins by executing `vagrant plugin install $plugin` e.g. `vagrant plugin install foo` to install plugin `foo`:
-    * vagrant-env
-    * vagrant-vbguest
-    * vagrant-disksize
+* Install required vagrant plugins by executing `vagrant plugin install vagrant-env vagrant-vbguest vagrant-disksize` 
 * Install [VirtualBox](https://www.virtualbox.org)
 
 ## Usage
