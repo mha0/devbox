@@ -1,6 +1,6 @@
 # Ubuntu 18.04 LTS Devbox
 
-Automated provisioning of a virtual machine with development tools based on Ubuntu 18.04 LTS based on Vagrant and Ansible.
+Automated provisioning of an Ubuntu 18.04 LTS virtual machine with development tools.
 
 ## Features
 * Based on the official Ubuntu 18.04 LTS
