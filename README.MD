@@ -22,9 +22,9 @@ This repo enables automated provisioning of a devbox based on Ubuntu LTS using V
 
 ### Creating a virtual machine
 
-0. Adjust the parameters in the `.env` file as needed
-0. Execute `vagrant up` - note that this will take quite some time so have some chocolate in the meantime
-0. Check `POST-INSTALL-TASKS.MD` for tasks you might have to do manually because it they are not automated by vagrant
+1. Adjust the parameters in the `.env` file as needed
+1. Execute `vagrant up` - note that this will take quite some time so have some chocolate in the meantime
+1. Check `POST-INSTALL-TASKS.MD` for tasks you might have to do manually because it they are not automated by vagrant
 
 ### Updating an existing virtual machine
 
