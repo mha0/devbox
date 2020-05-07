@@ -1,6 +1,6 @@
 # Ubuntu 18.04 LTS Devbox
 
-This repo enables automated provisioning of a devbox based on Ubuntu LTS using Vagrant and Ansible.
+Automated provisioning of a virtual machine with development tools based on Ubuntu 18.04 LTS based on Vagrant and Ansible.
 
 ## Features
 * Based on the official Ubuntu 18.04 LTS
