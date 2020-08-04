@@ -1,4 +1,4 @@
-- name: "install packages"
+- name: "install apt packages"
   tags:
     - packages
     - apt
@@ -10,20 +10,11 @@
       - guake
       - shutter
       - baobab
-    state: present
-
-- name: "install packages for development"
-  tags:
-    - packages
-    - apt
-  become: yes
-  apt:
-    pkg:
       - openjdk-11-jdk
       - maven
     state: present
 
-- name: "install snaps in classic mode"
+- name: "install snaps"
   tags:
     - packages
     - snap
@@ -31,17 +22,8 @@
   snap:
     name:
       - atom
+      - intellij-idea-ultimate
     classic: yes
-
- - name: "install IntelliJ IDEA"
-   tags:
-     - packages
-     - snap
-   become: yes
-   snap:
-     name:
-       - intellij-idea-ultimate
-     classic: yes
 
 # see https://stackoverflow.com/a/8290652
 - name: "configure startup applications"
