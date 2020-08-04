@@ -7,6 +7,7 @@
     pkg:
       - chromium-browser
       - keepassxc
+      - guake
       - shutter
       - baobab
     state: present
@@ -30,7 +31,6 @@
   snap:
     name:
       - atom
-      - sublime-text
     classic: yes
 
  - name: "install IntelliJ IDEA"

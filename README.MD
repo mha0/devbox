@@ -1,6 +1,6 @@
 # Ubuntu 18.04 LTS Devbox
 
-This repo enables automated provisioning of a devbox based on Ubuntu LTS using Vagrant and Ansible.
+Automated provisioning of an Ubuntu 18.04 LTS virtual machine with development tools.
 
 ## Features
 * Based on the official Ubuntu 18.04 LTS
@@ -14,28 +14,22 @@ This repo enables automated provisioning of a devbox based on Ubuntu LTS using V
 * Installs a predefined list of __gnome extensions__
 
 ## Requirements
-
-Install the following before usage:
-
-* Install [Vagrant](https://www.vagrantup.com/)
-* Install required vagrant plugins by executing `vagrant plugin install $plugin` e.g. `vagrant plugin install foo` to install plugin `foo`:
-    * vagrant-env
-    * vagrant-vbguest
-    * vagrant-disksize
 * Install [VirtualBox](https://www.virtualbox.org)
+* Install [Vagrant](https://www.vagrantup.com/)
+* Install required vagrant plugins by executing `vagrant plugin install vagrant-env vagrant-vbguest vagrant-disksize`
 
 ## Usage
 
-### Creating a virtual machine
+### Creating a virtual machine from scratch
 
-0. Adjust the parameters in the `.env` file as needed
-0. Execute `vagrant up` - note that this will take quite some time so have some chocolate in the meantime
-0. Check `POST-INSTALL-TASKS.MD` for tasks you might have to do manually because it they are not automated by vagrant
+1. Adjust the parameters in the `.env` file as needed
+1. Execute `vagrant up` - note that this will take quite some time so have some chocolate in the meantime
+1. Check `POST-INSTALL-TASKS.MD` for tasks you might have to do manually because it they are not automated by vagrant
 
 ### Updating an existing virtual machine
 
 There are multiple options to update an existing machine:
 
-* Use `run-playbook.sh $playbook` to execute a single playbook e.g. `run-playbook.sh shell` or `run-playbook.sh all`
-* Use `update-tag.sh $tag` to update a specific tag e.g. `update-tag.sh packages`
+* Use `run-playbook.sh $playbook` to deploy a certain role such as `run-playbook.sh packages` or `run-playbook.sh shell`
+* Use `update-tag.sh $tag` to update a specific tag e.g. `update-tag.sh packages` will install all packages across all roles
 * Use `update-config.sh` to update all configuration
