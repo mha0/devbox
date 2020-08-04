@@ -9,7 +9,6 @@
       - keepassxc
       - shutter
       - baobab
-      - gimp
     state: present
 
 - name: "install packages for development"
@@ -34,25 +33,15 @@
       - sublime-text
     classic: yes
 
-- name: "install snaps in sandbox mode"
-  tags:
-    - packages
-    - snap
-  become: yes
-  snap:
-    name:
-      - postman
-      - spotify
-
-- name: "install IntelliJ IDEA"
-  tags:
-    - packages
-    - snap
-  become: yes
-  snap:
-    name:
-      - intellij-idea-ultimate
-    classic: yes
+ - name: "install IntelliJ IDEA"
+   tags:
+     - packages
+     - snap
+   become: yes
+   snap:
+     name:
+       - intellij-idea-ultimate
+     classic: yes
 
 # see https://stackoverflow.com/a/8290652
 - name: "configure startup applications"
