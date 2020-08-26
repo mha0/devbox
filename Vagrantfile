@@ -1,3 +1,5 @@
+Vagrant.require_version ">= 2.2.9"
+
 # Install vagrant-vbguest to install virtualbox guest utils
 unless Vagrant.has_plugin?("vagrant-env")
     raise  Vagrant::Errors::VagrantError.new, "vagrant-env plugin is missing. Please install it using 'vagrant plugin install vagrant-env' and rerun 'vagrant up'"
@@ -17,7 +19,7 @@ Vagrant.configure("2") do |config|
   config.env.enable
   config.vbguest.auto_update = true
 
-  config.vm.box = "ubuntu/bionic64"
+  config.vm.box = "bento/ubuntu-20.04"
 
   config.disksize.size = ENV['MAX_DISK_SIZE']
 
@@ -28,7 +30,7 @@ Vagrant.configure("2") do |config|
     v.name = ENV['BOX_NAME']
     v.customize ["modifyvm", :id, "--vram", "128"]
     v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
-    v.customize ["modifyvm", :id, "--accelerate3d", "on"]
+    v.customize ["modifyvm", :id, "--accelerate3d", "off"]
     v.customize ["modifyvm", :id, "--clipboard-mode", "bidirectional"]
     v.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
   end
@@ -49,21 +51,16 @@ Vagrant.configure("2") do |config|
 
   # install gnome
   config.vm.provision "shell", inline: "sudo apt-get update"
-  config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop"
-
-  # remove unused packages
-  config.vm.provision :ansible_local do |ansible|
-    ansible.playbook = "provisioning/strip-ubuntu-playbook.yml"
-    ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
-  end
+  config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop aisleriot- bluez*- cheese- deja-dup- gnome-bluetooth- gnome-calendar- gnome-mahjongg- gnome-mines- gnome-sudoku- gnome-todo- libreoffice*- pulseaudio-module-bluetooth- rhythmbox- shotwell- simple-scan- thunderbird*- totem- transmission-gtk-"
 
   # upgrade packages
   config.vm.provision "shell", inline: "sudo apt-get -y upgrade"
 
   # install all
   config.vm.provision :ansible_local do |ansible|
+    ansible.install = true
+    ansible.version = "latest"
     ansible.playbook = "provisioning/all-playbook.yml"
-    ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
     ansible.galaxy_role_file = "provisioning/requirements.yml"
     ansible.galaxy_roles_path = "/home/vagrant/.ansible/roles/"
   end

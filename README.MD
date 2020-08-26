@@ -3,8 +3,7 @@
 Automated provisioning of an Ubuntu 18.04 LTS virtual machine with development tools.
 
 ## Features
-* Based on the official Ubuntu 18.04 LTS
-* Strips ubuntu of non-development packages
+* Based on Ubuntu 20.04 LTS
 * Updates and upgrades existing packages with `apt`
 * Installs __docker__, __docker-compose__
 * Installs the __ZSH__  shell with some plugins using `antigen`
@@ -16,7 +15,7 @@ Automated provisioning of an Ubuntu 18.04 LTS virtual machine with development t
 ## Requirements
 * Install [VirtualBox](https://www.virtualbox.org)
 * Install [Vagrant](https://www.vagrantup.com/)
-* Install required vagrant plugins by executing `vagrant plugin install vagrant-env vagrant-vbguest vagrant-disksize`
+* Install required vagrant plugins by executing `install-vagrant.sh`
 
 ## Usage
 

@@ -37,6 +37,7 @@
   apt:
     pkg:
       - terminator
+      - micro
       - zsh
       - htop
       - conky

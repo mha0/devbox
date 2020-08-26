@@ -1,3 +1,8 @@
+- name: "set keyboard"
+  roles:
+    - role: gantsign.keyboard
+      keyboard_layout: ch
+
 - name: "install packages for gnome"
   tags:
     - packages
@@ -23,12 +28,6 @@
 - pip:
     name: psutil
     executable: pip3
-
-- name: Configure available keyboard layouts in Gnome
-  dconf:
-    key: "/org/gnome/desktop/input-sources/sources"
-    value: "[('xkb', 'ch')]"
-    state: present
 
 # based on https://forums.fedoraforum.org/showthread.php?319036-Export-import-GNOME-shell-keybindings-(Fedora-28)&p=1811809#post1811809
 # see https://www.reddit.com/r/ansible/comments/5gubpl/shell_module_with_standard_std_input/

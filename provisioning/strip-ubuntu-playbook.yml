@@ -1,5 +1,0 @@
----
-- name: "strips a default ubuntu installation of non development packages"
-  hosts: default
-  roles:
-     - name: strip-ubuntu
