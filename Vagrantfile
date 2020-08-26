@@ -10,11 +10,6 @@ unless Vagrant.has_plugin?("vagrant-vbguest")
     raise  Vagrant::Errors::VagrantError.new, "vbguest plugin is missing. Please install it using 'vagrant plugin install vagrant-vbguest' and rerun 'vagrant up'"
 end
 
-# Install vagrant-disksize to allow resizing the vagrant box disk
-unless Vagrant.has_plugin?("vagrant-disksize")
-    raise  Vagrant::Errors::VagrantError.new, "vagrant-disksize plugin is missing. Please install it using 'vagrant plugin install vagrant-disksize' and rerun 'vagrant up'"
-end
-
 Vagrant.configure("2") do |config|
   config.env.enable
   config.vbguest.auto_update = true
@@ -38,14 +33,6 @@ Vagrant.configure("2") do |config|
   # copy files
   config.vm.provision "file", source: ".", destination: "$HOME/git/devbox/"
 
-  # install ansible
-  config.vm.provision :ansible_local do |ansible|
-    ansible.install = true
-    ansible.version = "latest"
-    ansible.playbook = "provisioning/hello-world-playbook.yml"
-    ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
-  end
-
   # configure shell keyboard
   config.vm.provision "shell", inline: "sudo loadkeys ch"
 
@@ -60,8 +47,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision :ansible_local do |ansible|
     ansible.install = true
     ansible.version = "latest"
-    ansible.playbook = "provisioning/all-playbook.yml"
-    ansible.galaxy_role_file = "provisioning/requirements.yml"
+    ansible.playbook = "ansible/all-playbook.yml"
+    ansible.galaxy_role_file = "ansible/requirements.yml"
     ansible.galaxy_roles_path = "/home/vagrant/.ansible/roles/"
   end
 

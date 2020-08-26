@@ -1,9 +1,12 @@
-# Ubuntu 18.04 LTS Devbox
+# Ubuntu 20.04.1 LTS Devbox
 
-Automated provisioning of an Ubuntu 18.04 LTS virtual machine with development tools.
+Automated provisioning of an Ubuntu virtual machine with development tools.
+
+This box uses the Bento Ubuntu Vagrant Box as a base. HashiCorp, the owner of Vagrant and Packer, [recommends these over the official Canonical Ubuntu Vagrant boxes](https://www.vagrantup.com/docs/boxes#official-boxes).
 
 ## Features
-* Based on Ubuntu 20.04 LTS
+* Based on Ubuntu LTS
+* Installs gnome but omits packages not needed for development
 * Updates and upgrades existing packages with `apt`
 * Installs __docker__, __docker-compose__
 * Installs the __ZSH__  shell with some plugins using `antigen`
@@ -32,3 +35,28 @@ There are multiple options to update an existing machine:
 * Use `run-playbook.sh $playbook` to deploy a certain role such as `run-playbook.sh packages` or `run-playbook.sh shell`
 * Use `update-tag.sh $tag` to update a specific tag e.g. `update-tag.sh packages` will install all packages across all roles
 * Use `update-config.sh` to update all configuration
+
+## Notes
+
+The [3d acceleration on VirtualBox is broken](https://askubuntu.com/questions/1035410/ubuntu-18-04-gnome-hangs-on-virtualbox-with-3d-acceleration-enabled). Just disable it which disables some of the desktop environment's graphical effects and your performance will be just fine.
+
+Installs the regular [Gnome desktop](https://packages.ubuntu.com/focal/ubuntu-gnome-desktop) EXCLUDING the following packages:
+* aisleriot: GNOME solitaire card game collection
+* bluez: Bluetooth tools and daemons
+* bluez-cups: Bluetooth printer driver for CUPS
+* cheese: tool to take pictures and videos from your webcam
+* deja-dup: Backup utility
+* gnome-bluetooth
+* gnome-calendar
+* gnome-mahjongg
+* gnome-mines
+* gnome-sudoku
+* gnome-todo
+* libreoffice: Prductivity suite with an open-source word, excel etc.
+* pulseaudio-module-bluetooth: Bluetooth module for PulseAudio sound server
+* rhythmbox: music player and organizer for GNOME
+* shotwell: digital photo organizer
+* simple-scan: Simple Scanning Utility
+* thunderbird: E-Mail client
+* totem: Simple media player for the GNOME desktop based on GStreamer
+* transmission-gtk: lightweight BitTorrent client (GTK+ interface)
