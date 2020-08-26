@@ -36,21 +36,20 @@ Vagrant.configure("2") do |config|
   # configure shell keyboard
   config.vm.provision "shell", inline: "sudo loadkeys ch"
 
-  # install gnome
+  # install and upgrade packages
   config.vm.provision "shell", inline: "sudo apt-get update"
-  config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop aisleriot- bluez*- cheese- deja-dup- gnome-bluetooth- gnome-calendar- gnome-mahjongg- gnome-mines- gnome-sudoku- gnome-todo- libreoffice*- pulseaudio-module-bluetooth- rhythmbox- shotwell- simple-scan- thunderbird*- totem- transmission-gtk-"
-
-  # upgrade packages
   config.vm.provision "shell", inline: "sudo apt-get -y upgrade"
 
-  # install all
+  # install the ansible playbook
+  config.vm.provision "shell", inline: "sudo apt-get -y install ansible"
   config.vm.provision :ansible_local do |ansible|
-    ansible.install = true
-    ansible.version = "latest"
     ansible.playbook = "ansible/all-playbook.yml"
     ansible.galaxy_role_file = "ansible/requirements.yml"
     ansible.galaxy_roles_path = "/home/vagrant/.ansible/roles/"
   end
+
+  # install gnome
+  config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop aisleriot- bluez*- cheese- deja-dup- gnome-bluetooth- gnome-calendar- gnome-mahjongg- gnome-mines- gnome-sudoku- gnome-todo- libreoffice*- pulseaudio-module-bluetooth- rhythmbox- shotwell- simple-scan- thunderbird*- totem- transmission-gtk-"
 
   # cleanup
   config.vm.provision "shell", inline: "sudo apt-get autoclean && sudo apt-get autoremove -y"

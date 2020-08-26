@@ -2,7 +2,9 @@
 - name: "install it all"
   hosts: default
   roles:
-     - name: shell
-     - name: docker
-     - name: packages
-     - name: gnome
+    - name: shell
+    - name: docker
+    - name: packages
+    - name: gnome
+    - role: gantsign.keyboard
+      keyboard_layout: ch
