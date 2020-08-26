@@ -8,7 +8,6 @@
       - chromium-browser
       - keepassxc
       - guake
-      - shutter
       - baobab
       - openjdk-11-jdk
       - maven
