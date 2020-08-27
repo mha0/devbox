@@ -36,3 +36,11 @@
     newline_sequence: '\n'
   with_items:
     - guake.desktop
+
+# see https://atom.io/packages/sync-settings
+- name: "install atom packages"
+  tags:
+    - atom
+  shell: "apm install sync-settings"
+  args:
+    executable: /bin/bash
