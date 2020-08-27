@@ -11,5 +11,5 @@ name='spotify-next'
 
 [custom-keybindings/custom0]
 binding='Print'
-command='shutter -s'
-name='shutter'
+command='flameshot gui'
+name='flameshot'
