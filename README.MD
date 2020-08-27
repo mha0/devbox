@@ -44,9 +44,6 @@ There are multiple options to update an existing machine:
 
 The following tasks are not automated.
 
-### Enable gnome shell extensions
-Enable gnome shell extensions with the application `Tweaks`
-
 ### Configure IntelliJ IDEA
 Install the following plugins:
 
