@@ -18,6 +18,6 @@
   * spotify-next
     * Key: Super+N
     * Command: dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-  * shutter
+  * flameshot
     * Key: Print
-    * Command: shutter -s
+    * Command: flameshot gui

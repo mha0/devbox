@@ -1,3 +1,0 @@
-#!/bin/bash
-echo setting input sources...
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'ch')]"
