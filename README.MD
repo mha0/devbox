@@ -47,15 +47,15 @@ The following tasks are not automated.
 ### Configure IntelliJ IDEA
 Install the following plugins:
 
+* SonarLint
+* Rainbow Brackets
+* Lombok
 * Key Promoter X
 * Archive browser
 * Builder Generator
-* SonarLint
-* Shellcheck
 * String Manipulation
-* Rainbow Brackets
+* Shellcheck
 * Ideolog
-* Lombok
 
 ### Configure atom
 * Restore `sync-settings` backup with gist id `a3486eaf057d10362648fa89d28ccf67`
