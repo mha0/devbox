@@ -37,7 +37,6 @@
   apt:
     pkg:
       - terminator
-      - micro
       - zsh
       - htop
       - conky
@@ -45,14 +44,5 @@
       - wget
       - tree
       - xclip
+      - micro
     state: present
-
-- name: "install micro"
-  tags:
-    - shell
-    - packages
-    - snap
-  become: yes
-  snap:
-    name: micro
-    classic: yes
