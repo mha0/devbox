@@ -8,10 +8,8 @@
       - chromium-browser
       - keepassxc
       - guake
-      - baobab
       - openjdk-11-jdk
       - maven
-      - flameshot
     state: present
 
 - name: "install snaps"

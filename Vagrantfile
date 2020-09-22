@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
     ansible.galaxy_roles_path = "/home/vagrant/.ansible/roles/"
   end
 
-  # install gnome
+  # install gnome shell
   config.vm.provision "shell", inline: "sudo apt-get -y install ubuntu-gnome-desktop aisleriot- bluez*- cheese- deja-dup- gnome-bluetooth- gnome-calendar- gnome-mahjongg- gnome-mines- gnome-sudoku- gnome-todo- libreoffice*- pulseaudio-module-bluetooth- rhythmbox- shotwell- simple-scan- thunderbird*- totem- transmission-gtk-"
 
   # cleanup
